@@ -31,7 +31,8 @@ namespace Pasteleria
             productoCN = new ProductoCN();
             clienteCN = new ClienteCN();
             trabajadorCN = new TrabajadorCN();
-        }
+            pedidoCN = new PedidoCN();
+    }
 
 
         #region botones
@@ -75,18 +76,42 @@ namespace Pasteleria
             List<DGVLine> newlist = new List<DGVLine>();
             if (dgvLineaCompra.DataSource != null) //Pregunta si su DataSource está vacio 
             {
-                List<DGVLine> list = (dgvLineaCompra.DataSource as List<DGVLine>); //Se llenará con una lista de elementos
-                //Se recorre cada uno, para cada elemento se añadirá un clon de los que tiene em datagridviewline
-                list.ForEach(item =>
+                //List<DGVLine> list = (dgvLineaCompra.DataSource as List<DGVLine>); //Se llenará con una lista de elementos
+                ////Se recorre cada uno, para cada elemento se añadirá un clon de los que tiene em datagridviewline
+                //list.ForEach(item =>
+                //{
+                //    newlist.Add((DGVLine)item.Clone());
+                //});
+
+                foreach (DataGridViewRow row in dgvLineaCompra.Rows)
                 {
-                    newlist.Add((DGVLine)item.Clone());
-                });
+                    DGVLine linea = new DGVLine();
+
+                    linea.idProducto = Convert.ToInt32(row.Cells["idProducto"].Value);
+                    linea.Producto = Convert.ToInt32(row.Cells["idProducto"].Value);
+                    linea.Cantidad = Convert.ToInt32(row.Cells["Cantidad"].Value);
+                    linea.PrecioUnitario = Convert.ToInt32(row.Cells["precio"].Value);
+
+                    newlist.Add(linea);
+                }
             }
+
+            List<DGVLine> list = newlist;
             newlist.Add(new DGVLine()); //se irá añadiendo objetos
 
             dgvLineaCompra.AutoGenerateColumns = false;
             dgvLineaCompra.DataSource = newlist; //Se cargan los componentes de la lista
 
+            //foreach (DataGridViewRow row in dgvLineaCompra.Rows)
+            //{
+            //    DGVLine linea = list.remove();
+            //    row.Cells["idProducto"].Value = ;
+            //    linea.Producto = Convert.ToInt32(row.Cells["idProducto"].Value);
+            //    linea.Cantidad = Convert.ToInt32(row.Cells["Cantidad"].Value);
+            //    linea.PrecioUnitario = Convert.ToInt32(row.Cells["precio"].Value);
+
+            //    newlist.Add(linea);
+            //}
         }
 
         //Se está creando un componente que permita añadirlo al formulario
@@ -111,8 +136,9 @@ namespace Pasteleria
 
             //Se captura el precio unitario, se convierte y selecciona al siguiente valor
             row.Cells["Precio"].Value = productoCN.GetPrecioByIdProducto(Convert.ToInt32(combo.SelectedValue));
+            row.Cells["idProducto"].Value = Convert.ToInt32(combo.SelectedValue);
 
-            List<int[]> arrayList = new List<int[]>();
+            //  List<int[]> arrayList = new List<int[]>();
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
@@ -125,6 +151,7 @@ namespace Pasteleria
 
                 //muestro en pantalla la info del cliente
 
+                txtId.Text = Convert.ToString(cliente.idCliente);
                 txtNit.Text = Convert.ToString(cliente.idCliente);
                 txtNombre.Text = cliente.nombre;
                 txtTelf.Text = cliente.telefono;
@@ -147,6 +174,7 @@ namespace Pasteleria
             if (cliente == null)
                 cliente = new Cliente();
 
+            cliente.idCliente = Convert.ToInt32(txtId.Text);
             cliente.nombre = txtNombre.Text;
             cliente.nit = Convert.ToInt32(txtNit.Text);
             cliente.referencia = txtRef.Text;
@@ -157,8 +185,21 @@ namespace Pasteleria
             #endregion
 
             ProductoCN productoCN = new ProductoCN();
-            Pedido invoice = new Pedido();
-            pedidoCN.Create(invoice);
+            Pedido pedido = new Pedido();
+            pedido.listaDeProductos = new List<DetallePedido>();
+
+            foreach (DataGridViewRow row in dgvLineaCompra.Rows)
+            {
+                DetallePedido producto = new DetallePedido();
+
+                producto.idProducto = Convert.ToInt32(row.Cells["idProducto"].Value);
+                producto.cantidad = Convert.ToInt32(row.Cells["Cantidad"].Value);
+
+                pedido.listaDeProductos.Add(producto);
+            }
+
+            trabajador = trabajadorCN.GetById(1);
+            pedidoCN.Create(pedido, cliente, trabajador);
 
 
             InicializarControles();
@@ -253,6 +294,7 @@ namespace Pasteleria
             txtNombre.Text = string.Empty;
             txtRef.Text = string.Empty;
             txtTelf.Text = string.Empty;
+            txtId.Text = string.Empty;
         }
 
         private void dgvLineaCompra_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -282,6 +324,7 @@ namespace Pasteleria
             public int? Producto { get; set; }
             public int Cantidad { get; set; }
             public decimal PrecioUnitario { get; set; }
+            public int idProducto { get; set; }
 
         #region ICloneable Members
         public object Clone()
@@ -291,8 +334,9 @@ namespace Pasteleria
                 item.Producto = this.Producto;
                 item.Cantidad = this.Cantidad;
                 item.PrecioUnitario = this.PrecioUnitario;
+                item.idProducto = this.idProducto;
 
-                return item; //devuelve un item como línea
+            return item; //devuelve un item como línea
 
             }
 

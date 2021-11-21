@@ -15,7 +15,7 @@ namespace Entidades
         public float costo { get; set; }
         public string direccionEntrega { get; set; }
         public int numPedido { get; set; }
-        public List<Producto> listaDeProductos { get; set; }
+        public List<DetallePedido> listaDeProductos { get; set; }
 
     }
 }

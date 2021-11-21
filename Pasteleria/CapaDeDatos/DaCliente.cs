@@ -126,15 +126,16 @@ namespace CapaDeDatos
                                             nombre = @nombre, 
                                             nit=@nit,
                                             telf=@telf,
-                                            ref=@ref,
-                                    WHERE tblClientes = @idcli";
+                                            ref=@ref
+                                    WHERE idCliente = @idcli";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@nit", cliente.nit);
-                cmd.Parameters.AddWithValue("@nom", cliente.nombre);
+                cmd.Parameters.AddWithValue("@nombre", cliente.nombre);
                 cmd.Parameters.AddWithValue("@telf", cliente.telefono);
                 cmd.Parameters.AddWithValue("@ref", cliente.referencia);
+                cmd.Parameters.AddWithValue("@idcli", cliente.idCliente);
                 cmd.ExecuteNonQuery();
 
             }
