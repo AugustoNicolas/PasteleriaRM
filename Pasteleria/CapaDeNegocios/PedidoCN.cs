@@ -14,20 +14,29 @@ namespace CapaDeNegocios
 
         private DaPedido daPedido = new DaPedido();
 
-        public void Create(Pedido invoice)
+        public void Create(Pedido pedido, Cliente cliente, Trabajador trabajador)
         {
             // Inicializo la transacción
+            pedido.fechaInicio = DateTime.Now;
+            pedido.numPedido = (CountNumPed() + 1);
+            if (pedido.status == 0) pedido.status = 1;
+
+            if (pedido.fechaEntrega < DateTime.Now) pedido.fechaEntrega = DateTime.Now;
+
+            if (pedido.direccionEntrega == null) pedido.direccionEntrega = "";
 
             using (TransactionScope scope = new TransactionScope())
             {
-                Pedido pedido = new Pedido();
-                Cliente cliente = new Cliente();
-                Trabajador trabajador = new Trabajador();
                 // Creo la factura en la BD
                 daPedido.Create(pedido, cliente, trabajador);
 
                 scope.Complete();
             }
         } //end create 
+
+        public int CountNumPed()
+        {
+            return daPedido.CountNumPed();
+        }
     } //end class
 }// end namespace

@@ -53,6 +53,28 @@ namespace CapaDeDatos
             return list;
         }//end get all
 
+        public int CountNumPed()
+        {
+            int nrorecrd = 0;
+            using (SqlConnection conn = new SqlConnection(ConexionSQL.ObtenerCadenaConexion()))
+            {
+                try
+                {
+                    conn.Open();
+                    string sql = @"SELECT Count(*)  FROM tblPedido  ";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    nrorecrd = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    return nrorecrd;
+
+                }
+                catch
+                {
+                    throw;
+                }
+            }
+        } // end exist
+
         public Pedido GetById(int id)
         {
             Pedido pedido = null;
@@ -71,7 +93,8 @@ namespace CapaDeDatos
                         if (reader.Read())
                         {
                             pedido = LoadPedido(reader);
-                            pedido.listaDeProductos = DAproducto.GetAllProductosInPedidoById(id);                                                    
+                           // pedido.listaDeProductos = DAproducto.GetAllProductosInPedidoById(id);
+                           // *********************************** DANGER ***********************************
                         }
                     }                   
 
@@ -90,7 +113,7 @@ namespace CapaDeDatos
             {
                 conn.Open();
                 string sql = @"INSERT into tblPedido (numPedido, fechaInicio, fechaEntrega, costo, dirreccion, estado, idCliente, idTrabajador)
-                values (@numped,@fechaIni, @fechaFin,@costo,@direccion,@estado,@idcliente,@idTrabajador)";
+                values ( @numped , @fechaIni , @fechaFin , @costo , @direccion , @estado , @idcliente , @idTrabajador ) SELECT SCOPE_IDENTITY()";
 
                 using(SqlCommand cmd = new SqlCommand(sql, conn))
                     //linea para pedido
@@ -103,17 +126,21 @@ namespace CapaDeDatos
                     cmd.Parameters.AddWithValue("@estado", ped.status);
                     cmd.Parameters.AddWithValue("@idcliente", cliente.idCliente);
                     cmd.Parameters.AddWithValue("@idTrabajador", trabajador.idTrabajador);
+
+
+                    ped.idPedido = Convert.ToInt32(cmd.ExecuteScalar());// nos retorna el Id de la factura creada
                 }
                 //linea para el detalle del pedido
-                string sqlDetalle = @"INSERT INTO tblDetallePedido(idProducto, idPedido) values (@idpro, @idped)";
+                string sqlDetalle = @"INSERT INTO tblDetallePedido(idProducto, idPedido, cantidad) values (@idpro, @idped, @cant)";
                 using (SqlCommand cmd = new SqlCommand(sqlDetalle, conn))
                 //linea para pedido
                 {
-                    foreach(Producto producto in ped.listaDeProductos)
+                    foreach(DetallePedido producto in ped.listaDeProductos)
                     {
                         cmd.Parameters.Clear();
                         cmd.Parameters.AddWithValue("@idpro", producto.idProducto);
-                        cmd.Parameters.AddWithValue("@fechaIni", ped.idPedido);
+                        cmd.Parameters.AddWithValue("@idped", ped.idPedido);
+                        cmd.Parameters.AddWithValue("@cant", producto.cantidad);
 
                         producto.idProducto = Convert.ToInt32(cmd.ExecuteScalar());
 

@@ -24,6 +24,7 @@ namespace CapaDeNegocios
         {
             if (DAcliente.Exist(cliente.idCliente))
                 return DAcliente.Update(cliente); // si existe, actualizamnos al cliente
+            
             else
                 return DAcliente.Create(cliente); // si no existe, lo creamos en la DB
         }

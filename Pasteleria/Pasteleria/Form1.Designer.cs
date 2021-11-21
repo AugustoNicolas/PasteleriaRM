@@ -35,9 +35,6 @@ namespace Pasteleria
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvLineaCompra = new System.Windows.Forms.DataGridView();
-            this.nombre = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNit = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtRef = new System.Windows.Forms.TextBox();
@@ -53,6 +50,10 @@ namespace Pasteleria
             this.label8 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.nombre = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLineaCompra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -108,6 +109,7 @@ namespace Pasteleria
             this.dgvLineaCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLineaCompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombre,
+            this.idProducto,
             this.precio,
             this.cantidad});
             this.dgvLineaCompra.Location = new System.Drawing.Point(30, 143);
@@ -118,23 +120,6 @@ namespace Pasteleria
             this.dgvLineaCompra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLineaCompra_CellContentClick);
             this.dgvLineaCompra.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLineaCompra_CellEndEdit);
             this.dgvLineaCompra.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvLineaCompra_EditingControlShowing);
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "nombre";
-            this.nombre.Name = "nombre";
-            // 
-            // precio
-            // 
-            this.precio.DataPropertyName = "precio";
-            this.precio.HeaderText = "precio";
-            this.precio.Name = "precio";
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "cantidad";
-            this.cantidad.Name = "cantidad";
             // 
             // txtNit
             // 
@@ -266,6 +251,29 @@ namespace Pasteleria
             this.label9.TabIndex = 17;
             this.label9.Text = "Id Cliente:";
             // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "nombre";
+            this.nombre.Name = "nombre";
+            // 
+            // idProducto
+            // 
+            this.idProducto.HeaderText = "idProducto";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.Visible = false;
+            // 
+            // precio
+            // 
+            this.precio.DataPropertyName = "precio";
+            this.precio.HeaderText = "precio";
+            this.precio.Name = "precio";
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "cantidad";
+            this.cantidad.Name = "cantidad";
+            // 
             // frmCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,13 +329,14 @@ namespace Pasteleria
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnConfirmarCompra;
-        private System.Windows.Forms.DataGridViewComboBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewComboBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
     }
 }
 
