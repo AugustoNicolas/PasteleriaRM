@@ -1,0 +1,11 @@
+C:\Users\Estudiante\Desktop\poo_proyecto\NXN_PROYECTO\Pasteleria\Entidades\bin\Debug\Entidades.dll
+C:\Users\Estudiante\Desktop\poo_proyecto\NXN_PROYECTO\Pasteleria\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Estudiante\Desktop\poo_proyecto\NXN_PROYECTO\Pasteleria\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Estudiante\Desktop\poo_proyecto\NXN_PROYECTO\Pasteleria\Entidades\obj\Debug\Entidades.dll
+C:\Users\Estudiante\Desktop\poo_proyecto\NXN_PROYECTO\Pasteleria\Entidades\obj\Debug\Entidades.pdb
+D:\UDi\Pasteleria\Pasteleria\Entidades\bin\Debug\Entidades.dll
+D:\UDi\Pasteleria\Pasteleria\Entidades\bin\Debug\Entidades.pdb
+D:\UDi\Pasteleria\Pasteleria\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+D:\UDi\Pasteleria\Pasteleria\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+D:\UDi\Pasteleria\Pasteleria\Entidades\obj\Debug\Entidades.dll
+D:\UDi\Pasteleria\Pasteleria\Entidades\obj\Debug\Entidades.pdb

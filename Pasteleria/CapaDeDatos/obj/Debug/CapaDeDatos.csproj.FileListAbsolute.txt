@@ -1,0 +1,17 @@
+C:\Users\Estudiante\Desktop\poo_proyecto\NXN_PROYECTO\Pasteleria\CapaDeDatos\bin\Debug\CapaDeDatos.dll
+C:\Users\Estudiante\Desktop\poo_proyecto\NXN_PROYECTO\Pasteleria\CapaDeDatos\bin\Debug\CapaDeDatos.pdb
+C:\Users\Estudiante\Desktop\poo_proyecto\NXN_PROYECTO\Pasteleria\CapaDeDatos\bin\Debug\Entidades.dll
+C:\Users\Estudiante\Desktop\poo_proyecto\NXN_PROYECTO\Pasteleria\CapaDeDatos\bin\Debug\Entidades.pdb
+C:\Users\Estudiante\Desktop\poo_proyecto\NXN_PROYECTO\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.csprojAssemblyReference.cache
+C:\Users\Estudiante\Desktop\poo_proyecto\NXN_PROYECTO\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CopyComplete
+C:\Users\Estudiante\Desktop\poo_proyecto\NXN_PROYECTO\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.dll
+C:\Users\Estudiante\Desktop\poo_proyecto\NXN_PROYECTO\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
+D:\UDi\Pasteleria\Pasteleria\CapaDeDatos\bin\Debug\CapaDeDatos.dll
+D:\UDi\Pasteleria\Pasteleria\CapaDeDatos\bin\Debug\CapaDeDatos.pdb
+D:\UDi\Pasteleria\Pasteleria\CapaDeDatos\bin\Debug\Entidades.dll
+D:\UDi\Pasteleria\Pasteleria\CapaDeDatos\bin\Debug\Entidades.pdb
+D:\UDi\Pasteleria\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.csprojAssemblyReference.cache
+D:\UDi\Pasteleria\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CoreCompileInputs.cache
+D:\UDi\Pasteleria\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CopyComplete
+D:\UDi\Pasteleria\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.dll
+D:\UDi\Pasteleria\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
