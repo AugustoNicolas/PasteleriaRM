@@ -74,6 +74,7 @@ namespace Pasteleria
         {
             //Creación de lista DataGridView con la clase que creamos antes
             List<DGVLine> newlist = new List<DGVLine>();
+            bool pass = false;
             if (dgvLineaCompra.DataSource != null) //Pregunta si su DataSource está vacio 
             {
                 //List<DGVLine> list = (dgvLineaCompra.DataSource as List<DGVLine>); //Se llenará con una lista de elementos
@@ -90,28 +91,34 @@ namespace Pasteleria
                     linea.idProducto = Convert.ToInt32(row.Cells["idProducto"].Value);
                     linea.Producto = Convert.ToInt32(row.Cells["idProducto"].Value);
                     linea.Cantidad = Convert.ToInt32(row.Cells["Cantidad"].Value);
-                    linea.PrecioUnitario = Convert.ToInt32(row.Cells["precio"].Value);
+                    linea.PrecioUnitario = Convert.ToDecimal(row.Cells["precio"].Value);
 
                     newlist.Add(linea);
                 }
+                pass = true;
             }
-
-            List<DGVLine> list = newlist;
+            Queue<DGVLine> list = new Queue<DGVLine>();
+            foreach (DGVLine linea in newlist)
+            {
+                list.Enqueue(linea);
+            }
             newlist.Add(new DGVLine()); //se irá añadiendo objetos
 
             dgvLineaCompra.AutoGenerateColumns = false;
             dgvLineaCompra.DataSource = newlist; //Se cargan los componentes de la lista
 
-            //foreach (DataGridViewRow row in dgvLineaCompra.Rows)
-            //{
-            //    DGVLine linea = list.remove();
-            //    row.Cells["idProducto"].Value = ;
-            //    linea.Producto = Convert.ToInt32(row.Cells["idProducto"].Value);
-            //    linea.Cantidad = Convert.ToInt32(row.Cells["Cantidad"].Value);
-            //    linea.PrecioUnitario = Convert.ToInt32(row.Cells["precio"].Value);
-
-            //    newlist.Add(linea);
-            //}
+            if (pass)
+            {
+                list.Enqueue(new DGVLine());
+                foreach (DataGridViewRow row in dgvLineaCompra.Rows)
+                {
+                    DGVLine linea = list.Dequeue();
+                    row.Cells["idProducto"].Value = linea.idProducto;
+                    row.Cells["nombre"].Value = linea.Producto;
+                    row.Cells["Cantidad"].Value = linea.Cantidad;
+                    row.Cells["precio"].Value = linea.PrecioUnitario;
+                }
+            }
         }
 
         //Se está creando un componente que permita añadirlo al formulario
@@ -231,6 +238,11 @@ namespace Pasteleria
                 errorProvider1.SetError(txtTelf, "El teléfono es obligatorio");
                 result = false;
             }
+            if (string.IsNullOrEmpty(txtId.Text))
+            {
+                errorProvider1.SetError(txtId, "El id es obligatorio");
+                result = false;
+            }
             //
             // valido las lineas de compra
             //
@@ -285,6 +297,7 @@ namespace Pasteleria
             //
             List<DGVLine> list = dgvLineaCompra.DataSource as List<DGVLine>;
             list.Clear();
+            dgvLineaCompra.DataSource = null;
 
             NuevaLinea();
 
