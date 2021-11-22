@@ -72,6 +72,7 @@ Create table tblDetallePedido(
    idElaboracion  int IDENTITY(1,1) NOT NULL ,
    idProducto int not null,
    idPedido int not null,   
+   cantidad int not null,
    primary key (idElaboracion),
    foreign key (idProducto) references tblProducto(idProducto),   
    foreign key (idPedido) references tblPedido(idPedido)
@@ -91,4 +92,11 @@ SELECT * FROM tblproducto WHERE idProducto = 2
 SELECT * FROM tblClientes
 
 INSERT INTO tblProducto (precio, stock, categoria, tamaño, relleno, nombre) 
-       VALUES	(10,5,'empanadas', 'personal' , 'queso', 'empanada');
+       VALUES	(20.5,5,'masitas', 'personal' , 'chocolate', 'Brownies');
+	   
+UPDATE tblClientes SET   nombre = @nombre,   nit=@nit,    telf=@telf,     ref=@ref    WHERE idCliente = @idcli
+
+SELECT * FROM tblDetallePedido
+
+SELECT Count(*)  FROM tblPedido    
+SELECT * FROM tblTrabajador
