@@ -9,3 +9,8 @@ D:\UDi\Pasteleria\Pasteleria\Entidades\obj\Debug\Entidades.csprojAssemblyReferen
 D:\UDi\Pasteleria\Pasteleria\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 D:\UDi\Pasteleria\Pasteleria\Entidades\obj\Debug\Entidades.dll
 D:\UDi\Pasteleria\Pasteleria\Entidades\obj\Debug\Entidades.pdb
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Entidades\bin\Debug\Entidades.dll
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Entidades\bin\Debug\Entidades.pdb
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Entidades\obj\Debug\Entidades.dll
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Entidades\obj\Debug\Entidades.pdb

@@ -331,6 +331,14 @@ namespace Pasteleria
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+            //boton para debug de las ventanas del Main
+        {
+            frmMain WinMain = new frmMain();
+            WinMain.Show();
+            this.Visible = false;
+        }
     }
     public class DGVLine: ICloneable //Creará una nueva línea
         {

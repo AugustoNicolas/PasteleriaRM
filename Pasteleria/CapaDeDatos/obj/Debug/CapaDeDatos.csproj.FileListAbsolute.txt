@@ -15,3 +15,12 @@ D:\UDi\Pasteleria\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CoreCompil
 D:\UDi\Pasteleria\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CopyComplete
 D:\UDi\Pasteleria\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.dll
 D:\UDi\Pasteleria\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeDatos\bin\Debug\CapaDeDatos.dll
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeDatos\bin\Debug\CapaDeDatos.pdb
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeDatos\bin\Debug\Entidades.dll
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeDatos\bin\Debug\Entidades.pdb
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.AssemblyReference.cache
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CoreCompileInputs.cache
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CopyComplete
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.dll
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.pdb

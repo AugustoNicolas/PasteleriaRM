@@ -43,9 +43,9 @@ Create table tblProducto (
    stock int not null,
    categoria varchar(10),
    tamaño varchar(10) not null,
-   saborMasa varchar(10) ,
-   saborRelleno varchar(10) ,
-   relleno varchar(10) ,
+   saborMasa varchar(20) ,
+   saborRelleno varchar(20) ,
+   relleno varchar(20) ,
    primary key (idProducto)
 );
 
@@ -79,6 +79,23 @@ Create table tblDetallePedido(
 );
 
 
+INSERT INTO tblProducto (precio, stock, categoria, tamaño, relleno, nombre) 
+       VALUES	(20.5,5,'masitas', 'personal' , 'chocolate', 'Brownies');
+
+
+INSERT INTO tblProducto (precio, stock, categoria, tamaño, relleno, nombre) 
+       VALUES	(20,5,'masitas', 'personal' , 'queso', 'empanadas');
+
+INSERT INTO tblClientes (nombre, nit, telf, ref) values ('Nicolas', 123456, '60019879', 'Palma verde');
+
+INSERT INTO tblClientes (nombre, nit, telf, ref) values ('Yerson', 555555, '6845987', 'Calle Juanjo');
+
+INSERT INTO tblClientes (nombre, nit, telf, ref) values ('Juan', 654321, '258964', 'Ventura mall');
+
+INSERT INTO tblTrabajador(ciTrabajador, nombre, telf) values (9999999, 'Pedro',  '70977597');
+
+
+
 SELECT * FROM tblProducto
 
 Select P.idProducto, p.precio, p.stock, p.categoria, p.tamaño, p.saborMasa, p.saborRelleno, p.relleno, p.nombre
@@ -89,12 +106,7 @@ SELECT precio FROM tblProducto WHERE idProducto = 1
 
 SELECT * FROM tblproducto WHERE idProducto = 2
 
-SELECT * FROM tblClientes
-
-INSERT INTO tblProducto (precio, stock, categoria, tamaño, relleno, nombre) 
-       VALUES	(20.5,5,'masitas', 'personal' , 'chocolate', 'Brownies');
-	   
-UPDATE tblClientes SET   nombre = @nombre,   nit=@nit,    telf=@telf,     ref=@ref    WHERE idCliente = @idcli
+SELECT * FROM tblPedido
 
 SELECT * FROM tblDetallePedido
 
