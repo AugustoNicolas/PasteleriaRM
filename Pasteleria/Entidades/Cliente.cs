@@ -13,5 +13,10 @@ namespace Entidades
         public string nombre { get; set; }
         public string telefono { get; set; }
         public string referencia { get; set; }
+
+        // atributos para ubicacion 
+        public double lat { get; set; }
+        public double lng { get; set; }
+        public string descripcionMap { get; set; }
     }
 }

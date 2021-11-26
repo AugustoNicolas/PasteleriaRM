@@ -22,7 +22,9 @@ namespace Pasteleria
         // Variable global que prepresenta al cliente seleccionado
         // para el pedido de compra
         //
-        Cliente cliente = null;
+
+        //Cliente cliente = null;
+        Cliente cliente = new Cliente();
         Trabajador trabajador = null;
 
         public frmCompra()//Inicializar componentes
@@ -338,6 +340,19 @@ namespace Pasteleria
             frmMain WinMain = new frmMain();
             WinMain.Show();
             this.Visible = false;
+        }
+
+        private void btnMap_Click(object sender, EventArgs e)
+        {
+            frmMap mapPage = new frmMap();
+            mapPage.ShowDialog();
+            DataTable dt = mapPage.DatosMap();
+            if (dt.Rows.Count > 0)
+            {
+                cliente.descripcionMap = dt.Rows[0].ItemArray[0].ToString();
+                cliente.lat = Convert.ToDouble(dt.Rows[0].ItemArray[1].ToString());
+                cliente.lng = Convert.ToDouble(dt.Rows[0].ItemArray[2].ToString());
+            }
         }
     }
     public class DGVLine: ICloneable //Creará una nueva línea
