@@ -21,11 +21,28 @@ namespace Pasteleria
             this.ttMensaje.SetToolTip(this.btnMax, "Maximizar Pantalla");
             this.ttMensaje.SetToolTip(this.btnRestaurar, "Restaurar Pantalla");
         }
-
+        //tamaño y ubicación de la pantalla del formulario
+        public void pantallaOk()
+        {
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+        }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Cerrando la Aplicación");
-            Application.Exit();
+            DialogResult resultado = MessageBox.Show("Se cerraran todas las aplicaciones en curso. Verifique antes de confirmar.", "Mensaje del Sistema:", MessageBoxButtons.OKCancel);
+            //Form mensaje = new frmInformation("Desea salir del sistema?");
+            //resultado = mensaje.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                //MessageBox.Show("Cerrando la Aplicación");
+                Application.Exit();
+           
+            }
+            else
+            {
+                btnPedidoUser.Focus();
+            }
+                
         }
 
         private void btnMax_Click(object sender, EventArgs e)
@@ -67,6 +84,34 @@ namespace Pasteleria
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnPedidoUser_Click(object sender, EventArgs e)
+        {
+            AbrirGestor(new winGestorPedido());
+        }
+        //Abrir ventanas de Gestor
+        public void AbrirGestor(object GestPed)
+        {
+            if (this.panContenido.Controls.Count > 0)
+                this.panContenido.Controls.RemoveAt(0);
+            Form Ped = GestPed as Form;
+            Ped.TopLevel = false;
+            Ped.Dock = DockStyle.Fill;
+            this.panContenido.Controls.Add(Ped);
+            this.panContenido.Tag = Ped;
+            Ped.Show();
+                
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            pantallaOk();
+        }
+
+        private void btnAtencion_Click(object sender, EventArgs e)
+        {
+            AbrirGestor(new winGestorPedido());
         }
     }
 }

@@ -24,3 +24,4 @@ D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeDatos\obj\Debug\Ca
 D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CopyComplete
 D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.dll
 D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeDatos\bin\Debug\FontAwesome.Sharp.dll

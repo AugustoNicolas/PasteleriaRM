@@ -63,3 +63,7 @@ D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pas
 D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pasteleria.exe
 D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pasteleria.pdb
 D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pasteleria.frmMain.resources
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pasteleria.winGestorPedido.resources
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Pasteleria\bin\Debug\BWCMM.dll
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Pasteleria\bin\Debug\FontAwesome.Sharp.dll
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pasteleria.winAsignarPed.resources

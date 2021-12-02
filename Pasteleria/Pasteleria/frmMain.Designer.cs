@@ -39,23 +39,23 @@ namespace Pasteleria
             this.btnMax = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panMenuVertical = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnCatalogo = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnRpt = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnContabilidad = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnIngredientes = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnProduccion = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAtencion = new System.Windows.Forms.Button();
             this.panTit = new System.Windows.Forms.Panel();
             this.btnPedidoUser = new System.Windows.Forms.Button();
             this.picBoxCake = new System.Windows.Forms.PictureBox();
             this.panContenido = new System.Windows.Forms.Panel();
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
-            this.button6 = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panBarraTit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -79,7 +79,7 @@ namespace Pasteleria
             this.panBarraTit.Location = new System.Drawing.Point(0, 0);
             this.panBarraTit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panBarraTit.Name = "panBarraTit";
-            this.panBarraTit.Size = new System.Drawing.Size(832, 54);
+            this.panBarraTit.Size = new System.Drawing.Size(1111, 54);
             this.panBarraTit.TabIndex = 0;
             this.panBarraTit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panBarraTit_MouseDown);
             // 
@@ -115,7 +115,7 @@ namespace Pasteleria
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurar.ErrorImage = null;
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(716, 4);
+            this.btnRestaurar.Location = new System.Drawing.Point(995, 4);
             this.btnRestaurar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(55, 46);
@@ -131,7 +131,7 @@ namespace Pasteleria
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.ErrorImage = null;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(659, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(938, 0);
             this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(57, 50);
@@ -147,7 +147,7 @@ namespace Pasteleria
             this.btnMax.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMax.ErrorImage = null;
             this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
-            this.btnMax.Location = new System.Drawing.Point(711, 5);
+            this.btnMax.Location = new System.Drawing.Point(990, 5);
             this.btnMax.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMax.Name = "btnMax";
             this.btnMax.Size = new System.Drawing.Size(65, 46);
@@ -162,7 +162,7 @@ namespace Pasteleria
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.ErrorImage = null;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(777, 5);
+            this.btnCerrar.Location = new System.Drawing.Point(1056, 5);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(53, 43);
@@ -174,17 +174,17 @@ namespace Pasteleria
             // 
             this.panMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.panMenuVertical.Controls.Add(this.panel6);
-            this.panMenuVertical.Controls.Add(this.button6);
+            this.panMenuVertical.Controls.Add(this.btnCatalogo);
             this.panMenuVertical.Controls.Add(this.panel5);
-            this.panMenuVertical.Controls.Add(this.button5);
+            this.panMenuVertical.Controls.Add(this.btnRpt);
             this.panMenuVertical.Controls.Add(this.panel4);
-            this.panMenuVertical.Controls.Add(this.button4);
+            this.panMenuVertical.Controls.Add(this.btnContabilidad);
             this.panMenuVertical.Controls.Add(this.panel3);
-            this.panMenuVertical.Controls.Add(this.button3);
+            this.panMenuVertical.Controls.Add(this.btnIngredientes);
             this.panMenuVertical.Controls.Add(this.panel2);
-            this.panMenuVertical.Controls.Add(this.button2);
+            this.panMenuVertical.Controls.Add(this.btnProduccion);
             this.panMenuVertical.Controls.Add(this.panel1);
-            this.panMenuVertical.Controls.Add(this.button1);
+            this.panMenuVertical.Controls.Add(this.btnAtencion);
             this.panMenuVertical.Controls.Add(this.panTit);
             this.panMenuVertical.Controls.Add(this.btnPedidoUser);
             this.panMenuVertical.Controls.Add(this.picBoxCake);
@@ -192,9 +192,41 @@ namespace Pasteleria
             this.panMenuVertical.Location = new System.Drawing.Point(0, 54);
             this.panMenuVertical.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panMenuVertical.Name = "panMenuVertical";
-            this.panMenuVertical.Size = new System.Drawing.Size(232, 451);
+            this.panMenuVertical.Size = new System.Drawing.Size(232, 743);
             this.panMenuVertical.TabIndex = 0;
             this.panMenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.panMenuVertical_Paint);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Maroon;
+            this.panel6.Location = new System.Drawing.Point(3, 99);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(5, 38);
+            this.panel6.TabIndex = 14;
+            // 
+            // btnCatalogo
+            // 
+            this.btnCatalogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCatalogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnCatalogo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCatalogo.FlatAppearance.BorderSize = 0;
+            this.btnCatalogo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCatalogo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCatalogo.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCatalogo.ForeColor = System.Drawing.Color.OldLace;
+            this.btnCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btnCatalogo.Image")));
+            this.btnCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCatalogo.Location = new System.Drawing.Point(14, 99);
+            this.btnCatalogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCatalogo.Name = "btnCatalogo";
+            this.btnCatalogo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnCatalogo.Size = new System.Drawing.Size(211, 38);
+            this.btnCatalogo.TabIndex = 13;
+            this.btnCatalogo.Text = "Catalogo";
+            this.btnCatalogo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCatalogo.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -205,28 +237,28 @@ namespace Pasteleria
             this.panel5.Size = new System.Drawing.Size(5, 38);
             this.panel5.TabIndex = 12;
             // 
-            // button5
+            // btnRpt
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.OldLace;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.Location = new System.Drawing.Point(13, 387);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button5.Size = new System.Drawing.Size(212, 38);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "Reportería";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnRpt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRpt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnRpt.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnRpt.FlatAppearance.BorderSize = 0;
+            this.btnRpt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnRpt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnRpt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRpt.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRpt.ForeColor = System.Drawing.Color.OldLace;
+            this.btnRpt.Image = ((System.Drawing.Image)(resources.GetObject("btnRpt.Image")));
+            this.btnRpt.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRpt.Location = new System.Drawing.Point(13, 387);
+            this.btnRpt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRpt.Name = "btnRpt";
+            this.btnRpt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnRpt.Size = new System.Drawing.Size(212, 38);
+            this.btnRpt.TabIndex = 11;
+            this.btnRpt.Text = "Reportería";
+            this.btnRpt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRpt.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
@@ -237,28 +269,28 @@ namespace Pasteleria
             this.panel4.Size = new System.Drawing.Size(5, 38);
             this.panel4.TabIndex = 10;
             // 
-            // button4
+            // btnContabilidad
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.OldLace;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(13, 337);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button4.Size = new System.Drawing.Size(212, 38);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Contabilidad";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnContabilidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnContabilidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnContabilidad.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnContabilidad.FlatAppearance.BorderSize = 0;
+            this.btnContabilidad.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnContabilidad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnContabilidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContabilidad.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContabilidad.ForeColor = System.Drawing.Color.OldLace;
+            this.btnContabilidad.Image = ((System.Drawing.Image)(resources.GetObject("btnContabilidad.Image")));
+            this.btnContabilidad.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnContabilidad.Location = new System.Drawing.Point(13, 337);
+            this.btnContabilidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnContabilidad.Name = "btnContabilidad";
+            this.btnContabilidad.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnContabilidad.Size = new System.Drawing.Size(212, 38);
+            this.btnContabilidad.TabIndex = 9;
+            this.btnContabilidad.Text = "Contabilidad";
+            this.btnContabilidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnContabilidad.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
@@ -269,28 +301,28 @@ namespace Pasteleria
             this.panel3.Size = new System.Drawing.Size(5, 38);
             this.panel3.TabIndex = 8;
             // 
-            // button3
+            // btnIngredientes
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.OldLace;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(13, 290);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button3.Size = new System.Drawing.Size(212, 38);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Entregas";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIngredientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnIngredientes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnIngredientes.FlatAppearance.BorderSize = 0;
+            this.btnIngredientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnIngredientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnIngredientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngredientes.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngredientes.ForeColor = System.Drawing.Color.OldLace;
+            this.btnIngredientes.Image = ((System.Drawing.Image)(resources.GetObject("btnIngredientes.Image")));
+            this.btnIngredientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIngredientes.Location = new System.Drawing.Point(13, 290);
+            this.btnIngredientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnIngredientes.Name = "btnIngredientes";
+            this.btnIngredientes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnIngredientes.Size = new System.Drawing.Size(212, 38);
+            this.btnIngredientes.TabIndex = 7;
+            this.btnIngredientes.Text = "Ingredientes";
+            this.btnIngredientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIngredientes.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -301,28 +333,28 @@ namespace Pasteleria
             this.panel2.Size = new System.Drawing.Size(5, 38);
             this.panel2.TabIndex = 6;
             // 
-            // button2
+            // btnProduccion
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.OldLace;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(13, 241);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button2.Size = new System.Drawing.Size(212, 38);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Producción";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnProduccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProduccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnProduccion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnProduccion.FlatAppearance.BorderSize = 0;
+            this.btnProduccion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnProduccion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnProduccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProduccion.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProduccion.ForeColor = System.Drawing.Color.OldLace;
+            this.btnProduccion.Image = ((System.Drawing.Image)(resources.GetObject("btnProduccion.Image")));
+            this.btnProduccion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnProduccion.Location = new System.Drawing.Point(13, 241);
+            this.btnProduccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnProduccion.Name = "btnProduccion";
+            this.btnProduccion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnProduccion.Size = new System.Drawing.Size(212, 38);
+            this.btnProduccion.TabIndex = 5;
+            this.btnProduccion.Text = "Producción";
+            this.btnProduccion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProduccion.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -333,28 +365,29 @@ namespace Pasteleria
             this.panel1.Size = new System.Drawing.Size(5, 38);
             this.panel1.TabIndex = 4;
             // 
-            // button1
+            // btnAtencion
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.OldLace;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(13, 194);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button1.Size = new System.Drawing.Size(212, 38);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Atención";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAtencion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAtencion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnAtencion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAtencion.FlatAppearance.BorderSize = 0;
+            this.btnAtencion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAtencion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnAtencion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtencion.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtencion.ForeColor = System.Drawing.Color.OldLace;
+            this.btnAtencion.Image = ((System.Drawing.Image)(resources.GetObject("btnAtencion.Image")));
+            this.btnAtencion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAtencion.Location = new System.Drawing.Point(13, 194);
+            this.btnAtencion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAtencion.Name = "btnAtencion";
+            this.btnAtencion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnAtencion.Size = new System.Drawing.Size(212, 38);
+            this.btnAtencion.TabIndex = 3;
+            this.btnAtencion.Text = "Atención";
+            this.btnAtencion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAtencion.UseVisualStyleBackColor = false;
+            this.btnAtencion.Click += new System.EventHandler(this.btnAtencion_Click);
             // 
             // panTit
             // 
@@ -387,6 +420,7 @@ namespace Pasteleria
             this.btnPedidoUser.Text = "Pedidos";
             this.btnPedidoUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPedidoUser.UseVisualStyleBackColor = false;
+            this.btnPedidoUser.Click += new System.EventHandler(this.btnPedidoUser_Click);
             // 
             // picBoxCake
             // 
@@ -408,57 +442,28 @@ namespace Pasteleria
             this.panContenido.Location = new System.Drawing.Point(232, 54);
             this.panContenido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panContenido.Name = "panContenido";
-            this.panContenido.Size = new System.Drawing.Size(600, 451);
+            this.panContenido.Size = new System.Drawing.Size(879, 743);
             this.panContenido.TabIndex = 0;
             // 
             // ttMensaje
             // 
             this.ttMensaje.IsBalloon = true;
             // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.OldLace;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.Location = new System.Drawing.Point(14, 99);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button6.Size = new System.Drawing.Size(211, 38);
-            this.button6.TabIndex = 13;
-            this.button6.Text = "Catalogo";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Maroon;
-            this.panel6.Location = new System.Drawing.Point(3, 99);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(5, 38);
-            this.panel6.TabIndex = 14;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 505);
+            this.ClientSize = new System.Drawing.Size(1111, 797);
             this.Controls.Add(this.panContenido);
             this.Controls.Add(this.panMenuVertical);
             this.Controls.Add(this.panBarraTit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "aa";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.panBarraTit.ResumeLayout(false);
             this.panBarraTit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).EndInit();
@@ -484,19 +489,19 @@ namespace Pasteleria
         private System.Windows.Forms.PictureBox picBoxCake;
         private System.Windows.Forms.Button btnPedidoUser;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnRpt;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnContabilidad;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnIngredientes;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnProduccion;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAtencion;
         private System.Windows.Forms.Panel panTit;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnCatalogo;
         private System.Windows.Forms.Panel panel6;
     }
 }

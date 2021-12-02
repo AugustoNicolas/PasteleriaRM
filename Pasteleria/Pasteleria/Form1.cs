@@ -206,7 +206,7 @@ namespace Pasteleria
             }
 
             trabajador = trabajadorCN.GetById(1);
-            pedidoCN.Create(pedido, cliente, trabajador);
+            pedidoCN.Create(pedido);
 
 
             InicializarControles();

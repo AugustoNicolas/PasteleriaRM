@@ -14,3 +14,7 @@ D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Entidades\bin\Debug\Enti
 D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Entidades\obj\Debug\Entidades.dll
 D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Entidades\obj\Debug\Entidades.pdb
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Entidades\bin\Debug\BWCMM.dll
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\Entidades\bin\Debug\FontAwesome.Sharp.dll

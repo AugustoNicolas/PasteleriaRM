@@ -11,15 +11,24 @@ Create table tblClientes(
 );
 
 
-
-
 Create table tblTrabajador (
    idTrabajador  int IDENTITY(1,1) NOT NULL ,
    ciTrabajador int not null,
    nombre varchar(20) not null,
    telf varchar(20) not null,
-   primary key (idTrabajador)
+   nick varchar(20) not null,
+   estado int not null,
+   primary key (idTrabajador),
+   dateIn date not null,
+   dateMod date,
 );
+
+alter table tblTrabajador add dateMod date
+
+update tblTrabajador set dateIn='11/30/2021'
+select * from tblTrabajador
+
+alter table tblTrabajador alter column dateIn date not null
 
 Create table tblPedido(
    idPedido  int IDENTITY(1,1) NOT NULL ,

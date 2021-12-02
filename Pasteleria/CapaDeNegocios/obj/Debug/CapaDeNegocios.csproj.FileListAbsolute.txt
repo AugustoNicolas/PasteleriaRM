@@ -30,3 +30,4 @@ D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeNegocios\obj\Debug
 D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeNegocios\obj\Debug\CapaDeNegocios.csproj.CopyComplete
 D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeNegocios\obj\Debug\CapaDeNegocios.dll
 D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeNegocios\obj\Debug\CapaDeNegocios.pdb
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeNegocios\bin\Debug\FontAwesome.Sharp.dll
