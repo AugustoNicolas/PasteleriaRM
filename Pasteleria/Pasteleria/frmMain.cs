@@ -24,7 +24,6 @@ namespace Pasteleria
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Cerrando la Aplicación");
             Application.Exit();
         }
 
@@ -67,6 +66,39 @@ namespace Pasteleria
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panContenido_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void AbrirFromHija(object formhija)
+        {
+            if (this.panContenido.Controls.Count > 0)
+                this.panContenido.Controls.RemoveAt(0);
+
+            Form fh = formhija as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.panContenido.Controls.Add(fh);
+            this.panContenido.Tag = fh;
+            fh.Show();
+            
+        }
+
+        private void btnPedidoUser_Click(object sender, EventArgs e)
+        {
+            AbrirFromHija(new frmCompra());
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AbrirFromHija(new frmCatalogo());
+        }
+
+        private void btnIngredientes_Click(object sender, EventArgs e)
+        {
+            AbrirFromHija(new frmProduccion());
         }
     }
 }
