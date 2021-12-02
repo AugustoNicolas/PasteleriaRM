@@ -21,7 +21,12 @@ namespace Pasteleria
             this.ttMensaje.SetToolTip(this.btnMax, "Maximizar Pantalla");
             this.ttMensaje.SetToolTip(this.btnRestaurar, "Restaurar Pantalla");
         }
-
+        //tamaño y ubicación de la pantalla del formulario
+        public void pantallaOk()
+        {
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+        }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -99,6 +104,32 @@ namespace Pasteleria
         private void btnIngredientes_Click(object sender, EventArgs e)
         {
             AbrirFromHija(new frmProduccion());
+        private void btnPedidoUser_Click(object sender, EventArgs e)
+        {
+            AbrirGestor(new winGestorPedido());
+        }
+        //Abrir ventanas de Gestor
+        public void AbrirGestor(object GestPed)
+        {
+            if (this.panContenido.Controls.Count > 0)
+                this.panContenido.Controls.RemoveAt(0);
+            Form Ped = GestPed as Form;
+            Ped.TopLevel = false;
+            Ped.Dock = DockStyle.Fill;
+            this.panContenido.Controls.Add(Ped);
+            this.panContenido.Tag = Ped;
+            Ped.Show();
+                
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            pantallaOk();
+        }
+
+        private void btnAtencion_Click(object sender, EventArgs e)
+        {
+            AbrirGestor(new winGestorPedido());
         }
     }
 }

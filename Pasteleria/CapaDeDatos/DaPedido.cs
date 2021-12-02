@@ -26,6 +26,8 @@ namespace CapaDeDatos
             ped.costo = Convert.ToInt32(reader["costo"]);
             ped.direccionEntrega = Convert.ToString(reader["direccion"]);
             ped.status = Convert.ToInt32(reader["estado"]);
+            ped.idTrabajador = Convert.ToInt32(reader["idTrabajador"]);
+            ped.idCliente = Convert.ToInt32(reader["idCliente"]);
 
             ped.descripcionMap = Convert.ToString(reader["descripcionMap"]);
             ped.lat = Convert.ToDouble(reader["lat"]);
@@ -79,6 +81,26 @@ namespace CapaDeDatos
             }
         } // end exist
 
+        public Pedido UpdateIdTrabajador(Pedido pedido)
+        {
+            using (SqlConnection conn = new SqlConnection(ConexionSQL.ObtenerCadenaConexion()))
+            {
+                conn.Open();
+
+                string sql = @"UPDATE tblPedido SET  
+                                            idTrabajador = @idtra
+                                    WHERE idPedido = @idPed";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@idtra", pedido.idTrabajador);
+                cmd.Parameters.AddWithValue("@idPed", pedido.idPedido);
+                cmd.ExecuteNonQuery();
+
+            }
+            return pedido;
+        }
+
         public Pedido GetById(int id)
         {
             Pedido pedido = null;
@@ -110,8 +132,8 @@ namespace CapaDeDatos
                 }
             }
         } // end get by id
-
-        public void CreateWithMap(Pedido ped, Cliente cliente, Trabajador trabajador)
+//Revisaaaaar ***************************************************************************
+        public void CreateWithMap(Pedido ped)
         {
             using(SqlConnection conn = new SqlConnection(ConexionSQL.ObtenerCadenaConexion()))
             {
@@ -128,8 +150,8 @@ namespace CapaDeDatos
                     cmd.Parameters.AddWithValue("@costo", ped.costo);
                     cmd.Parameters.AddWithValue("@direccion", ped.direccionEntrega);
                     cmd.Parameters.AddWithValue("@estado", ped.status);
-                    cmd.Parameters.AddWithValue("@idcliente", cliente.idCliente);
-                    cmd.Parameters.AddWithValue("@idTrabajador", trabajador.idTrabajador);
+                    cmd.Parameters.AddWithValue("@idcliente", ped.idCliente);
+                    cmd.Parameters.AddWithValue("@idTrabajador", ped.idTrabajador);
                     cmd.Parameters.AddWithValue("@lat", ped.lat);
                     cmd.Parameters.AddWithValue("@lng", ped.lng);
                     cmd.Parameters.AddWithValue("@descripcion", ped.descripcionMap);

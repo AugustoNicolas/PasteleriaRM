@@ -52,3 +52,4 @@ D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\CapaDeDatos\bin\Debug\Newtonsoft.Json.
 D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\CapaDeDatos\bin\Debug\System.Data.SqlClient.xml
 D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\CapaDeDatos\bin\Debug\System.Data.SQLite.xml
 D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\CapaDeDatos\bin\Debug\System.Security.Principal.Windows.xml
+D:\Users\Deyerli\Desktop\GitHub\PasteleriaRM\Pasteleria\CapaDeDatos\bin\Debug\FontAwesome.Sharp.dll

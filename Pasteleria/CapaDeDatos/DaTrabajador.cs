@@ -18,6 +18,11 @@ namespace CapaDeDatos
             trabajador.ciTrabajador = Convert.ToInt32(reader["ciTrabajador"]);
             trabajador.nombre = Convert.ToString(reader["nombre"]);
             trabajador.telefono = Convert.ToString(reader["telf"]);
+            trabajador.nick = Convert.ToString(reader["nick"]);
+            trabajador.dateIn = Convert.ToDateTime(reader["dateIn"]);
+            if (reader["dateMod"] != DBNull.Value)
+               trabajador.dateMod = Convert.ToDateTime(reader["dateMod"]);
+
 
             return trabajador;
         } //end trabajador 
@@ -146,6 +151,36 @@ namespace CapaDeDatos
                 trabajador.idTrabajador = Convert.ToInt32(cmd.ExecuteScalar());
             }
             return trabajador;
+        //Listas por nick de trabajadores
+        public List<Trabajador> GetNick()
+        {
+            try
+            {
+                List<Trabajador> listaDeTrabajadores = new List<Trabajador>();
+                using (SqlConnection conn = new SqlConnection(ConexionSQL.ObtenerCadenaConexion()))
+                {
+                    conn.Open();
+                    string sql = @"SELECT nick,idTrabajador  FROM tblTrabajador";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Trabajador trabajador = new Trabajador();
+                        trabajador.nick = Convert.ToString(reader["nick"]);
+                        trabajador.idTrabajador= Convert.ToInt32(reader["idTrabajador"]);
+                    }
+                    return listaDeTrabajadores;
+
+                }
+            }
+
+
+            catch
+            {
+                throw;
+            }
+
         }
 
 

@@ -14,8 +14,19 @@ Create table tblTrabajador (
    ciTrabajador int not null,
    nombre varchar(20) not null,
    telf varchar(20) not null,
-   primary key (idTrabajador)
+   nick varchar(20) not null,
+   estado int not null,
+   primary key (idTrabajador),
+   dateIn date not null,
+   dateMod date,
 );
+
+alter table tblTrabajador add dateMod date
+
+update tblTrabajador set dateIn='11/30/2021'
+select * from tblTrabajador
+
+alter table tblTrabajador alter column dateIn date not null
 
 Create table tblPedido(
    idPedido  int IDENTITY(1,1) NOT NULL ,
@@ -43,7 +54,7 @@ Create table tblProducto (
    precio money not null,
    stock int not null,
    categoria varchar(10) not null,
-   tamaño varchar(20) not null,
+   tamaï¿½o varchar(20) not null,
    produccion int not null,
    estatus int not null,
    foto image
@@ -82,11 +93,11 @@ Create table tblDetallePedido(
 select * from tblProducto
 DELETE FROM tblProducto where idProducto = 3;
 
-INSERT INTO tblProducto (precio, stock, categoria, tamaño, relleno, nombre) 
+INSERT INTO tblProducto (precio, stock, categoria, tamaï¿½o, relleno, nombre) 
        VALUES	(20.5,5,'masitas', 'personal' , 'chocolate', 'Brownies');
 
 
-INSERT INTO tblProducto (nombre, precio, stock, categoria, tamaño, produccion, estatus) 
+INSERT INTO tblProducto (nombre, precio, stock, categoria, tamaï¿½o, produccion, estatus) 
        VALUES	('Tamales',20.8 ,0,'masitas', 'personal' , 1,1 ) SELECT SCOPE_IDENTITY();
 
 INSERT INTO tblClientes (nombre, nit, telf) values ('Nicolas', 123456, '60019879');
@@ -101,7 +112,7 @@ INSERT INTO tblTrabajador(ciTrabajador, nombre,telf) values (9999999, 'Pedro',  
 
 SELECT * FROM tblProducto
 
-Select P.idProducto, p.precio, p.stock, p.categoria, p.tamaño, p.saborMasa, p.saborRelleno, p.relleno, p.nombre
+Select P.idProducto, p.precio, p.stock, p.categoria, p.tamaï¿½o, p.saborMasa, p.saborRelleno, p.relleno, p.nombre
 FROM tblProducto p, tblDetallePedido DP
 WHERE p.idProducto = DP.idProducto and DP.idPedido = 1
 

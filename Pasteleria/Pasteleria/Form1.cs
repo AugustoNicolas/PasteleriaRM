@@ -215,7 +215,9 @@ namespace Pasteleria
             ped.direccionEntrega = txtRef.Text;
 
             trabajador = trabajadorCN.GetById(1);
-            pedidoCN.Create(ped, cliente, trabajador);
+            pedidoCN.Create(pedido);
+
+
             InicializarControles();
         }
         private bool Validaciones()
