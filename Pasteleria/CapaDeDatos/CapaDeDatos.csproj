@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="ConexionSQL.cs" />
     <Compile Include="DaCliente.cs" />
+    <Compile Include="DaIngredientes.cs" />
     <Compile Include="DaPedido.cs" />
     <Compile Include="DaProducto.cs" />
     <Compile Include="DaTrabajador.cs" />

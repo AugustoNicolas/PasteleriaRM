@@ -83,11 +83,22 @@ namespace Pasteleria
             this.panContenido.Controls.Add(fh);
             this.panContenido.Tag = fh;
             fh.Show();
+            
         }
 
         private void btnPedidoUser_Click(object sender, EventArgs e)
         {
             AbrirFromHija(new frmCompra());
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AbrirFromHija(new frmCatalogo());
+        }
+
+        private void btnIngredientes_Click(object sender, EventArgs e)
+        {
+            AbrirFromHija(new frmProduccion());
         }
     }
 }

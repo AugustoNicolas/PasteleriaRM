@@ -28,7 +28,10 @@ namespace CapaDeNegocios
             using (TransactionScope scope = new TransactionScope())
             {
                 // Creo la factura en la BD
-                daPedido.Create(pedido, cliente, trabajador);
+                if (pedido.direccionEntrega != null && pedido.lat != null && pedido.lng != null)
+                    daPedido.CreateWithMap(pedido, cliente, trabajador);
+                else
+                    daPedido.Create(pedido, cliente, trabajador);
 
                 scope.Complete();
             }

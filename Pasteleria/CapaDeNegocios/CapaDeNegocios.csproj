@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteCN.cs" />
+    <Compile Include="IngredientesCN.cs" />
     <Compile Include="PedidoCN.cs" />
     <Compile Include="ProductoCN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

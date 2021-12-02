@@ -51,7 +51,7 @@ namespace Pasteleria
             this.gMap1.GrayScaleMode = false;
             this.gMap1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMap1.LevelsKeepInMemory = 5;
-            this.gMap1.Location = new System.Drawing.Point(0, 1);
+            this.gMap1.Location = new System.Drawing.Point(12, 12);
             this.gMap1.MarkersEnabled = true;
             this.gMap1.MaxZoom = 2;
             this.gMap1.MinZoom = 2;
@@ -65,7 +65,7 @@ namespace Pasteleria
             this.gMap1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMap1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMap1.ShowTileGridLines = false;
-            this.gMap1.Size = new System.Drawing.Size(372, 428);
+            this.gMap1.Size = new System.Drawing.Size(360, 408);
             this.gMap1.TabIndex = 0;
             this.gMap1.Zoom = 0D;
             this.gMap1.DoubleClick += new System.EventHandler(this.gMap1_DoubleClick);
@@ -88,18 +88,20 @@ namespace Pasteleria
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(403, 51);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label1.Location = new System.Drawing.Point(403, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.Size = new System.Drawing.Size(47, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Latitud";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(406, 90);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label2.Location = new System.Drawing.Point(406, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.Size = new System.Drawing.Size(62, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Longitud ";
             // 
@@ -107,19 +109,22 @@ namespace Pasteleria
             // 
             this.dgMarcadores.AllowUserToAddRows = false;
             this.dgMarcadores.AllowUserToDeleteRows = false;
+            this.dgMarcadores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.dgMarcadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMarcadores.Location = new System.Drawing.Point(395, 158);
             this.dgMarcadores.Name = "dgMarcadores";
             this.dgMarcadores.Size = new System.Drawing.Size(181, 215);
             this.dgMarcadores.TabIndex = 5;
+            this.dgMarcadores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMarcadores_CellContentClick);
             this.dgMarcadores.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Seleccionar);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(403, 12);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label3.Location = new System.Drawing.Point(403, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.Size = new System.Drawing.Size(83, 16);
             this.label3.TabIndex = 7;
             this.label3.Text = "Descripcion:";
             // 
@@ -133,36 +138,42 @@ namespace Pasteleria
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(392, 142);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label4.Location = new System.Drawing.Point(392, 137);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.Size = new System.Drawing.Size(99, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "Ultimos envios:";
             // 
             // btnAceptar
             // 
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(170)))), ((int)(((byte)(126)))));
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Location = new System.Drawing.Point(501, 397);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnSalir
             // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(170)))), ((int)(((byte)(126)))));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Location = new System.Drawing.Point(406, 397);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 10;
             this.btnSalir.Text = "Cancelar";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(588, 432);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAceptar);

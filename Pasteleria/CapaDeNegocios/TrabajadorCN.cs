@@ -20,6 +20,12 @@ namespace CapaDeNegocios
         {
             return daTrabajador.GetById(id);
         }
+        public void Delete(Trabajador trabajador)
+        {
+            if (trabajador.idTrabajador != 0)
+                daTrabajador.Delete(trabajador);
+        }
+        public 
         
     }
 }

@@ -103,3 +103,8 @@ D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\Pasteleria\bin\Debug\System.Data.SQLit
 D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\Pasteleria\bin\Debug\System.Security.Principal.Windows.xml
 D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\Pasteleria\bin\Debug\CapaDeDatos.dll.config
 D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pasteleria.frmMap.resources
+D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pasteleria.frmCatalogo.resources
+D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pasteleria.frmNewProducto.resources
+D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pasteleria.frmProduccion.resources
+D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pasteleria.frmTrabajador.resources
+D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pasteleria.frmNewTrabajador.resources

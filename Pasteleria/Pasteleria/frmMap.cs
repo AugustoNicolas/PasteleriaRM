@@ -16,7 +16,6 @@ namespace Pasteleria
 {
     public partial class frmMap : Form
     {
-        bool end = false;
 
         GMarkerGoogle marker;
         GMapOverlay markerOverlay;
@@ -104,14 +103,14 @@ namespace Pasteleria
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.OK;
             Close();
-            end = true;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
-            end = false;
+            this.DialogResult = DialogResult.Cancel;
         }
         public DataTable DatosMap()
         {
@@ -120,10 +119,14 @@ namespace Pasteleria
             dt.Columns.Add(new DataColumn("Lat", typeof(double)));
             dt.Columns.Add(new DataColumn("Lng", typeof(double)));
 
-            if (end)
-                dt.Rows.Add(txtDescripcion.Text, Convert.ToDouble(txtLat.Text), Convert.ToDouble(txtLng.Text));
+            dt.Rows.Add(txtDescripcion.Text, Convert.ToDouble(txtLat.Text), Convert.ToDouble(txtLng.Text));
 
             return dt;
+        }
+
+        private void dgMarcadores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

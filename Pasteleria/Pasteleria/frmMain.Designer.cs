@@ -48,7 +48,7 @@ namespace Pasteleria
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnIngredientes = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panTit = new System.Windows.Forms.Panel();
@@ -77,7 +77,7 @@ namespace Pasteleria
             this.panBarraTit.Dock = System.Windows.Forms.DockStyle.Top;
             this.panBarraTit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panBarraTit.Location = new System.Drawing.Point(0, 0);
-            this.panBarraTit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panBarraTit.Margin = new System.Windows.Forms.Padding(2);
             this.panBarraTit.Name = "panBarraTit";
             this.panBarraTit.Size = new System.Drawing.Size(778, 44);
             this.panBarraTit.TabIndex = 0;
@@ -118,7 +118,7 @@ namespace Pasteleria
             this.btnRestaurar.ErrorImage = null;
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
             this.btnRestaurar.Location = new System.Drawing.Point(691, 3);
-            this.btnRestaurar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRestaurar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(41, 37);
             this.btnRestaurar.TabIndex = 3;
@@ -134,7 +134,7 @@ namespace Pasteleria
             this.btnMinimizar.ErrorImage = null;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
             this.btnMinimizar.Location = new System.Drawing.Point(648, 0);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(43, 41);
             this.btnMinimizar.TabIndex = 2;
@@ -150,7 +150,7 @@ namespace Pasteleria
             this.btnMax.ErrorImage = null;
             this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
             this.btnMax.Location = new System.Drawing.Point(687, 4);
-            this.btnMax.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMax.Margin = new System.Windows.Forms.Padding(2);
             this.btnMax.Name = "btnMax";
             this.btnMax.Size = new System.Drawing.Size(49, 37);
             this.btnMax.TabIndex = 1;
@@ -165,7 +165,7 @@ namespace Pasteleria
             this.btnCerrar.ErrorImage = null;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.Location = new System.Drawing.Point(737, 4);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(40, 35);
             this.btnCerrar.TabIndex = 0;
@@ -184,7 +184,7 @@ namespace Pasteleria
             this.panMenuVertical.Controls.Add(this.panel3);
             this.panMenuVertical.Controls.Add(this.button3);
             this.panMenuVertical.Controls.Add(this.panel2);
-            this.panMenuVertical.Controls.Add(this.button2);
+            this.panMenuVertical.Controls.Add(this.btnIngredientes);
             this.panMenuVertical.Controls.Add(this.panel1);
             this.panMenuVertical.Controls.Add(this.button1);
             this.panMenuVertical.Controls.Add(this.panTit);
@@ -192,7 +192,7 @@ namespace Pasteleria
             this.panMenuVertical.Controls.Add(this.picBoxCake);
             this.panMenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.panMenuVertical.Location = new System.Drawing.Point(0, 44);
-            this.panMenuVertical.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panMenuVertical.Margin = new System.Windows.Forms.Padding(2);
             this.panMenuVertical.Name = "panMenuVertical";
             this.panMenuVertical.Size = new System.Drawing.Size(174, 471);
             this.panMenuVertical.TabIndex = 0;
@@ -202,7 +202,7 @@ namespace Pasteleria
             // 
             this.panel6.BackColor = System.Drawing.Color.Maroon;
             this.panel6.Location = new System.Drawing.Point(2, 80);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(4, 31);
             this.panel6.TabIndex = 14;
@@ -221,7 +221,7 @@ namespace Pasteleria
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button6.Location = new System.Drawing.Point(10, 80);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button6.Size = new System.Drawing.Size(158, 31);
@@ -229,12 +229,13 @@ namespace Pasteleria
             this.button6.Text = "Catalogo";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Maroon;
             this.panel5.Location = new System.Drawing.Point(4, 315);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(4, 31);
             this.panel5.TabIndex = 12;
@@ -253,7 +254,7 @@ namespace Pasteleria
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.Location = new System.Drawing.Point(10, 314);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button5.Size = new System.Drawing.Size(159, 31);
@@ -266,7 +267,7 @@ namespace Pasteleria
             // 
             this.panel4.BackColor = System.Drawing.Color.Maroon;
             this.panel4.Location = new System.Drawing.Point(3, 281);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(4, 31);
             this.panel4.TabIndex = 10;
@@ -285,7 +286,7 @@ namespace Pasteleria
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.Location = new System.Drawing.Point(10, 274);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button4.Size = new System.Drawing.Size(159, 31);
@@ -298,7 +299,7 @@ namespace Pasteleria
             // 
             this.panel3.BackColor = System.Drawing.Color.Maroon;
             this.panel3.Location = new System.Drawing.Point(3, 241);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(4, 31);
             this.panel3.TabIndex = 8;
@@ -317,7 +318,7 @@ namespace Pasteleria
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.Location = new System.Drawing.Point(10, 236);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button3.Size = new System.Drawing.Size(159, 31);
@@ -330,39 +331,40 @@ namespace Pasteleria
             // 
             this.panel2.BackColor = System.Drawing.Color.Maroon;
             this.panel2.Location = new System.Drawing.Point(3, 201);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(4, 31);
             this.panel2.TabIndex = 6;
             // 
-            // button2
+            // btnIngredientes
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.OldLace;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(10, 196);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button2.Size = new System.Drawing.Size(159, 31);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Producción";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIngredientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnIngredientes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnIngredientes.FlatAppearance.BorderSize = 0;
+            this.btnIngredientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnIngredientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnIngredientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngredientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngredientes.ForeColor = System.Drawing.Color.OldLace;
+            this.btnIngredientes.Image = ((System.Drawing.Image)(resources.GetObject("btnIngredientes.Image")));
+            this.btnIngredientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIngredientes.Location = new System.Drawing.Point(10, 196);
+            this.btnIngredientes.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIngredientes.Name = "btnIngredientes";
+            this.btnIngredientes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnIngredientes.Size = new System.Drawing.Size(159, 31);
+            this.btnIngredientes.TabIndex = 5;
+            this.btnIngredientes.Text = "Producción";
+            this.btnIngredientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIngredientes.UseVisualStyleBackColor = false;
+            this.btnIngredientes.Click += new System.EventHandler(this.btnIngredientes_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Maroon;
             this.panel1.Location = new System.Drawing.Point(3, 160);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(4, 31);
             this.panel1.TabIndex = 4;
@@ -381,7 +383,7 @@ namespace Pasteleria
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.Location = new System.Drawing.Point(10, 158);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button1.Size = new System.Drawing.Size(159, 31);
@@ -394,7 +396,7 @@ namespace Pasteleria
             // 
             this.panTit.BackColor = System.Drawing.Color.Maroon;
             this.panTit.Location = new System.Drawing.Point(3, 117);
-            this.panTit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panTit.Margin = new System.Windows.Forms.Padding(2);
             this.panTit.Name = "panTit";
             this.panTit.Size = new System.Drawing.Size(4, 31);
             this.panTit.TabIndex = 2;
@@ -413,7 +415,7 @@ namespace Pasteleria
             this.btnPedidoUser.Image = ((System.Drawing.Image)(resources.GetObject("btnPedidoUser.Image")));
             this.btnPedidoUser.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPedidoUser.Location = new System.Drawing.Point(10, 116);
-            this.btnPedidoUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPedidoUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnPedidoUser.Name = "btnPedidoUser";
             this.btnPedidoUser.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnPedidoUser.Size = new System.Drawing.Size(158, 31);
@@ -428,10 +430,10 @@ namespace Pasteleria
             this.picBoxCake.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.picBoxCake.Image = ((System.Drawing.Image)(resources.GetObject("picBoxCake.Image")));
             this.picBoxCake.Location = new System.Drawing.Point(4, 2);
-            this.picBoxCake.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picBoxCake.Margin = new System.Windows.Forms.Padding(2);
             this.picBoxCake.Name = "picBoxCake";
             this.picBoxCake.Size = new System.Drawing.Size(170, 79);
-            this.picBoxCake.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxCake.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxCake.TabIndex = 1;
             this.picBoxCake.TabStop = false;
             // 
@@ -441,7 +443,7 @@ namespace Pasteleria
             this.panContenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panContenido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.panContenido.Location = new System.Drawing.Point(174, 44);
-            this.panContenido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panContenido.Margin = new System.Windows.Forms.Padding(2);
             this.panContenido.Name = "panContenido";
             this.panContenido.Size = new System.Drawing.Size(604, 471);
             this.panContenido.TabIndex = 0;
@@ -460,7 +462,7 @@ namespace Pasteleria
             this.Controls.Add(this.panMenuVertical);
             this.Controls.Add(this.panBarraTit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
             this.Text = "aa";
             this.panBarraTit.ResumeLayout(false);
@@ -494,7 +496,7 @@ namespace Pasteleria
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnIngredientes;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panTit;

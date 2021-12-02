@@ -14,6 +14,9 @@ namespace Pasteleria
 {
     public partial class frmCompra : Form
     {
+
+        private frmMap mapPage = new frmMap();
+
         private ProductoCN productoCN;
         private PedidoCN pedidoCN;
         private ClienteCN clienteCN;
@@ -26,6 +29,7 @@ namespace Pasteleria
         //Cliente cliente = null;
         Cliente cliente = new Cliente();
         Trabajador trabajador = null;
+        Pedido ped = new Pedido();
 
         public frmCompra()//Inicializar componentes
         {
@@ -79,12 +83,6 @@ namespace Pasteleria
             bool pass = false;
             if (dgvLineaCompra.DataSource != null) //Pregunta si su DataSource está vacio 
             {
-                //List<DGVLine> list = (dgvLineaCompra.DataSource as List<DGVLine>); //Se llenará con una lista de elementos
-                ////Se recorre cada uno, para cada elemento se añadirá un clon de los que tiene em datagridviewline
-                //list.ForEach(item =>
-                //{
-                //    newlist.Add((DGVLine)item.Clone());
-                //});
 
                 foreach (DataGridViewRow row in dgvLineaCompra.Rows)
                 {
@@ -121,6 +119,18 @@ namespace Pasteleria
                     row.Cells["precio"].Value = linea.PrecioUnitario;
                 }
             }
+        }
+
+        private double CalcularTotal()
+        {
+
+            double total = 0;
+            foreach (DataGridViewRow row in dgvLineaCompra.Rows)
+            {
+                total += (Convert.ToDouble(row.Cells["precio"].Value) * Convert.ToInt32(row.Cells["cantidad"].Value));
+            }
+            txtTotal.Text = Convert.ToString(total);
+            return total;
         }
 
         //Se está creando un componente que permita añadirlo al formulario
@@ -161,10 +171,9 @@ namespace Pasteleria
                 //muestro en pantalla la info del cliente
 
                 txtId.Text = Convert.ToString(cliente.idCliente);
-                txtNit.Text = Convert.ToString(cliente.idCliente);
+                txtNit.Text = Convert.ToString(cliente.nit);
                 txtNombre.Text = cliente.nombre;
                 txtTelf.Text = cliente.telefono;
-                txtRef.Text = cliente.referencia;
                 
             }
         }
@@ -186,31 +195,27 @@ namespace Pasteleria
             cliente.idCliente = Convert.ToInt32(txtId.Text);
             cliente.nombre = txtNombre.Text;
             cliente.nit = Convert.ToInt32(txtNit.Text);
-            cliente.referencia = txtRef.Text;
             cliente.telefono = txtTelf.Text;
 
             cliente = clienteCN.SaveCustomer(cliente);
 
             #endregion
 
-            ProductoCN productoCN = new ProductoCN();
-            Pedido pedido = new Pedido();
-            pedido.listaDeProductos = new List<DetallePedido>();
-
+            ped.listaDeProductos = new List<DetallePedido>();
+            ped.costo = CalcularTotal();
             foreach (DataGridViewRow row in dgvLineaCompra.Rows)
             {
                 DetallePedido producto = new DetallePedido();
 
                 producto.idProducto = Convert.ToInt32(row.Cells["idProducto"].Value);
                 producto.cantidad = Convert.ToInt32(row.Cells["Cantidad"].Value);
-
-                pedido.listaDeProductos.Add(producto);
+                ped.costo += Convert.ToInt32(row.Cells["precio"].Value);
+                ped.listaDeProductos.Add(producto);
             }
+            ped.direccionEntrega = txtRef.Text;
 
             trabajador = trabajadorCN.GetById(1);
-            pedidoCN.Create(pedido, cliente, trabajador);
-
-
+            pedidoCN.Create(ped, cliente, trabajador);
             InicializarControles();
         }
         private bool Validaciones()
@@ -230,11 +235,6 @@ namespace Pasteleria
                 errorProvider1.SetError(txtNit, "El NIT es obligatorio");
                 result = false;
             }
-            if(string.IsNullOrEmpty(txtRef.Text))
-            {
-                errorProvider1.SetError(txtRef,"La referencia es obligatorio");
-                result = false;
-            }
             if (string.IsNullOrEmpty(txtTelf.Text))
             {
                 errorProvider1.SetError(txtTelf, "El teléfono es obligatorio");
@@ -245,10 +245,26 @@ namespace Pasteleria
                 errorProvider1.SetError(txtId, "El id es obligatorio");
                 result = false;
             }
+
+            // Validaciones check
+            if (chEnvio.Checked)
+            {
+                if (mapPage.ShowDialog() == DialogResult.OK)
+                {
+                    errorProvider1.SetError(btnMap, "Seleccione una ubicacion en el mapa");
+                    result = false;
+                }
+
+                if (string.IsNullOrEmpty(txtRef.Text))
+                {
+                    errorProvider1.SetError(txtRef, "La referencia es obligatorio");
+                    result = false;
+                }
+            }
             //
             // valido las lineas de compra
             //
-            foreach (DataGridViewRow row in dgvLineaCompra.Rows)
+                foreach (DataGridViewRow row in dgvLineaCompra.Rows)
             {
                 //
                 // inicializo las linea de error
@@ -310,6 +326,7 @@ namespace Pasteleria
             txtRef.Text = string.Empty;
             txtTelf.Text = string.Empty;
             txtId.Text = string.Empty;
+            chEnvio.Checked = false;
         }
 
         private void dgvLineaCompra_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -317,6 +334,7 @@ namespace Pasteleria
 
             if (dgvCombo != null)
                 dgvCombo.SelectedIndexChanged -= new EventHandler(dgvLineaCompra_SelectedIndexChanged);
+            CalcularTotal();
         }
 
         private void dgvLineaCompra_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -344,15 +362,19 @@ namespace Pasteleria
 
         private void btnMap_Click(object sender, EventArgs e)
         {
-            frmMap mapPage = new frmMap();
             mapPage.ShowDialog();
             DataTable dt = mapPage.DatosMap();
             if (dt.Rows.Count > 0)
             {
-                cliente.descripcionMap = dt.Rows[0].ItemArray[0].ToString();
-                cliente.lat = Convert.ToDouble(dt.Rows[0].ItemArray[1].ToString());
-                cliente.lng = Convert.ToDouble(dt.Rows[0].ItemArray[2].ToString());
+                ped.descripcionMap = dt.Rows[0].ItemArray[0].ToString();
+                ped.lat = Convert.ToDouble(dt.Rows[0].ItemArray[1].ToString());
+                ped.lng = Convert.ToDouble(dt.Rows[0].ItemArray[2].ToString());
             }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
     public class DGVLine: ICloneable //Creará una nueva línea
