@@ -33,12 +33,10 @@ namespace Pasteleria
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAsignar = new FontAwesome.Sharp.IconPictureBox();
             this.btnCerrar = new FontAwesome.Sharp.IconPictureBox();
-            this.btnUndo = new FontAwesome.Sharp.IconPictureBox();
             this.DGTrabajador = new System.Windows.Forms.DataGridView();
             this.cbkTrabajador = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btnAsignar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnUndo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGTrabajador)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,25 +79,6 @@ namespace Pasteleria
             this.btnCerrar.TabIndex = 4;
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // btnUndo
-            // 
-            this.btnUndo.BackColor = System.Drawing.Color.LightSalmon;
-            this.btnUndo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUndo.Flip = FontAwesome.Sharp.FlipOrientation.Vertical;
-            this.btnUndo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnUndo.IconChar = FontAwesome.Sharp.IconChar.Undo;
-            this.btnUndo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnUndo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnUndo.IconSize = 43;
-            this.btnUndo.Location = new System.Drawing.Point(17, 197);
-            this.btnUndo.Name = "btnUndo";
-            this.btnUndo.Padding = new System.Windows.Forms.Padding(1);
-            this.btnUndo.Rotation = 1D;
-            this.btnUndo.Size = new System.Drawing.Size(61, 43);
-            this.btnUndo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnUndo.TabIndex = 5;
-            this.btnUndo.TabStop = false;
             // 
             // DGTrabajador
             // 
@@ -153,7 +132,6 @@ namespace Pasteleria
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(322, 335);
             this.Controls.Add(this.DGTrabajador);
-            this.Controls.Add(this.btnUndo);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnAsignar);
             this.DoubleBuffered = true;
@@ -171,7 +149,6 @@ namespace Pasteleria
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.winAsignarPed_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.btnAsignar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnUndo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGTrabajador)).EndInit();
             this.ResumeLayout(false);
 
@@ -181,7 +158,6 @@ namespace Pasteleria
 
         private FontAwesome.Sharp.IconPictureBox btnAsignar;
         private FontAwesome.Sharp.IconPictureBox btnCerrar;
-        private FontAwesome.Sharp.IconPictureBox btnUndo;
         private System.Windows.Forms.DataGridView DGTrabajador;
         private System.Windows.Forms.DataGridViewCheckBoxColumn cbkTrabajador;
     }

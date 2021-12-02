@@ -30,9 +30,9 @@ namespace Pasteleria
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(winGestorPedido));
             this.lblTit = new System.Windows.Forms.Label();
             this.TxbIdTrabaj = new System.Windows.Forms.TextBox();
@@ -45,10 +45,9 @@ namespace Pasteleria
             this.lblIdTrabajador = new System.Windows.Forms.Label();
             this.ttMesagge = new System.Windows.Forms.ToolTip(this.components);
             this.DGPed = new System.Windows.Forms.DataGridView();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnAsignar = new System.Windows.Forms.Button();
             this.check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnAsignar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGPed)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,6 +132,7 @@ namespace Pasteleria
             this.btnPedidosNoCerrados.TabIndex = 2;
             this.btnPedidosNoCerrados.Text = "En Proceso";
             this.btnPedidosNoCerrados.UseVisualStyleBackColor = false;
+            this.btnPedidosNoCerrados.Click += new System.EventHandler(this.btnPedidosNoCerrados_Click);
             // 
             // panel2
             // 
@@ -159,6 +159,7 @@ namespace Pasteleria
             this.btnPedidosPen.TabIndex = 0;
             this.btnPedidosPen.Text = "Pendientes";
             this.btnPedidosPen.UseVisualStyleBackColor = false;
+            this.btnPedidosPen.Click += new System.EventHandler(this.btnPedidosPen_Click);
             // 
             // lblIdTrabajador
             // 
@@ -180,25 +181,25 @@ namespace Pasteleria
             // 
             // DGPed
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.SaddleBrown;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.DGPed.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.SaddleBrown;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.DGPed.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.DGPed.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGPed.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGPed.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGPed.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGPed.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Chocolate;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGPed.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Chocolate;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGPed.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.DGPed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGPed.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.check});
@@ -206,20 +207,27 @@ namespace Pasteleria
             this.DGPed.Location = new System.Drawing.Point(21, 161);
             this.DGPed.MultiSelect = false;
             this.DGPed.Name = "DGPed";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Chocolate;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGPed.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Chocolate;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGPed.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.DGPed.RowHeadersWidth = 15;
             this.DGPed.RowTemplate.Height = 24;
             this.DGPed.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGPed.Size = new System.Drawing.Size(836, 363);
             this.DGPed.TabIndex = 9;
             this.DGPed.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGPed_CellContentClick);
+            // 
+            // check
+            // 
+            this.check.HeaderText = "check";
+            this.check.MinimumWidth = 6;
+            this.check.Name = "check";
+            this.check.Width = 68;
             // 
             // btnCerrar
             // 
@@ -241,27 +249,6 @@ namespace Pasteleria
             this.btnCerrar.TabIndex = 7;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnEditar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEditar.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.Maroon;
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnEditar.Location = new System.Drawing.Point(230, 543);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(186, 56);
-            this.btnEditar.TabIndex = 8;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
             // 
             // btnAsignar
             // 
@@ -285,13 +272,6 @@ namespace Pasteleria
             this.btnAsignar.UseVisualStyleBackColor = false;
             this.btnAsignar.Click += new System.EventHandler(this.btnAsignar_Click);
             // 
-            // check
-            // 
-            this.check.HeaderText = "check";
-            this.check.MinimumWidth = 6;
-            this.check.Name = "check";
-            this.check.Width = 68;
-            // 
             // winGestorPedido
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -300,7 +280,6 @@ namespace Pasteleria
             this.ClientSize = new System.Drawing.Size(1099, 929);
             this.Controls.Add(this.DGPed);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAsignar);
             this.Controls.Add(this.TxbIdTrabaj);
             this.Controls.Add(this.lblIdTrabajador);
@@ -336,7 +315,6 @@ namespace Pasteleria
         private System.Windows.Forms.Button btnPedidosNoCerrados;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnPedidosPen;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnAsignar;
         private System.Windows.Forms.ToolTip ttMesagge;

@@ -24,16 +24,12 @@ namespace Pasteleria
 
             this.ttMesagge.SetToolTip(this.btnAsignar, "Asignar la ejecución del pedido");
             this.ttMesagge.SetToolTip(this.btnCerrar, "Pedido Elaborado: Cerrar Pedido");
-            this.ttMesagge.SetToolTip(this.btnEditar, "Re-Asignar el pedido");
             this.ttMesagge.SetToolTip(this.btnPedidosPen, "Listar pedidos pendientes Sin Asignar");
             this.ttMesagge.SetToolTip(this.btnPedidosNoCerrados, "Listar pedidos en proceso de preparación");
             this.ttMesagge.SetToolTip(this.btnPedidosCerrados, "Listar los pedidos cerrados por fecha");
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
@@ -92,6 +88,36 @@ namespace Pasteleria
             //{
             //    row = 5;
             //}
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPedidosPen_Click(object sender, EventArgs e)
+        {
+            DGPed.DataSource = Filtrador(1);
+        }
+
+        private List<Pedido> Filtrador(int status)
+        {
+            List<Pedido> listaFiltradaDePedidos = new List<Pedido>();
+            foreach (Pedido pedido in pedidocn.GetAll())
+            {
+                if (pedido.status == status)
+                    listaFiltradaDePedidos.Add(pedido);
+            }
+            return listaFiltradaDePedidos;
+        }
+
+        private void btnPedidosNoCerrados_Click(object sender, EventArgs e)
+        {
+            DGPed.DataSource = Filtrador(2);
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DGPed.DataSource = Filtrador(3);
         }
     }
 }
