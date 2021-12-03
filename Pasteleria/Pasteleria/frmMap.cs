@@ -11,6 +11,8 @@ using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
+using Entidades;
+using CapaDeNegocios;
 
 namespace Pasteleria
 {
@@ -24,6 +26,8 @@ namespace Pasteleria
         int filaSeleccionada = 0;
         double lat = -17.7839971735485;
         double lng = -63.180570602417;
+        public Cliente cliente = new Cliente();
+        private PedidoCN cnPed = new PedidoCN();
 
         public frmMap()
         {
@@ -41,6 +45,11 @@ namespace Pasteleria
             //Insertar datos al dt para mostrar en la lista
             dtPedidosRecientes.Rows.Add("Centro de la ciudad", lat, lng);
             dgMarcadores.DataSource = dtPedidosRecientes;
+
+            foreach(Pedido pedido in cnPed.GetAllByCliente(cliente.idCliente))
+            {
+                dtPedidosRecientes.Rows.Add(pedido.descripcionMap, pedido.lat, pedido.lng);
+            }
             //desactivar las columnas de lat y long
             dgMarcadores.Columns[1].Visible = false;
             dgMarcadores.Columns[2].Visible = false;

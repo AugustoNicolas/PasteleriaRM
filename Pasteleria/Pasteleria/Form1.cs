@@ -157,7 +157,6 @@ namespace Pasteleria
             row.Cells["Precio"].Value = productoCN.GetPrecioByIdProducto(Convert.ToInt32(combo.SelectedValue));
             row.Cells["idProducto"].Value = Convert.ToInt32(combo.SelectedValue);
 
-            //  List<int[]> arrayList = new List<int[]>();
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
@@ -166,15 +165,14 @@ namespace Pasteleria
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                cliente = clienteCN.GetById(frm.IdCliente); //Mantengo la entidad cliente seleccionada global al formilario
+                cliente = clienteCN.GetById(frm.IdCliente); //Mantengo la entidad cliente seleccionada global al formulario
 
                 //muestro en pantalla la info del cliente
 
                 txtId.Text = Convert.ToString(cliente.idCliente);
                 txtNit.Text = Convert.ToString(cliente.nit);
                 txtNombre.Text = cliente.nombre;
-                txtTelf.Text = cliente.telefono;
-                
+                txtTelf.Text = cliente.telefono;                
             }
         }
 
@@ -251,11 +249,11 @@ namespace Pasteleria
             // Validaciones check
             if (chEnvio.Checked)
             {
-                if (mapPage.ShowDialog() == DialogResult.OK)
-                {
-                    errorProvider1.SetError(btnMap, "Seleccione una ubicacion en el mapa");
-                    result = false;
-                }
+                //if (mapPage.ShowDialog() == DialogResult.OK)
+                //{
+                //    errorProvider1.SetError(btnMap, "Seleccione una ubicacion en el mapa");
+                //    result = false;
+                //}
 
                 if (string.IsNullOrEmpty(txtRef.Text))
                 {
@@ -364,7 +362,14 @@ namespace Pasteleria
 
         private void btnMap_Click(object sender, EventArgs e)
         {
+            cliente.idCliente = Convert.ToInt32(txtId.Text);
+            cliente.nombre = txtNombre.Text;
+            cliente.nit = Convert.ToInt32(txtNit.Text);
+            cliente.telefono = txtTelf.Text;
+
+            mapPage.cliente = this.cliente;
             mapPage.ShowDialog();
+
             DataTable dt = mapPage.DatosMap();
             if (dt.Rows.Count > 0)
             {

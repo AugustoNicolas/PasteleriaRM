@@ -130,3 +130,5 @@ SELECT * FROM tblTrabajador
 
 INSERT into tblPedido (numPedido, fechaInicio, fechaEntrega, costo,  estado, idCliente, idTrabajador)              
 values ( 18 , '12/03/2021' , '12/03/2021' , 20 , 1 , @idcliente , @idTrabajador ) SELECT SCOPE_IDENTITY()
+
+SELECT * FROM tblPedido WHERE idCliente = 1 and lat is not null 
