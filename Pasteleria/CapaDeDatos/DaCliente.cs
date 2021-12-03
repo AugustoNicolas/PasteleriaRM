@@ -18,7 +18,6 @@ namespace CapaDeDatos
             cliente.nit = Convert.ToInt32(reader["nit"]);
             cliente.nombre = Convert.ToString(reader["nombre"]);
             cliente.telefono = Convert.ToString(reader["telf"]);
-            cliente.referencia = Convert.ToString(reader["ref"]);
 
             return cliente;
         }
@@ -100,12 +99,11 @@ namespace CapaDeDatos
             { 
                 using (SqlConnection conn = new SqlConnection(ConexionSQL.ObtenerCadenaConexion()))
                 {
-                    string sql = @"INSERT INTO tblClientes (nit, nombre , telf, ref) values (@nit, @nom, @telf , @ref )  SELECT SCOPE_IDENTITY()";
+                    string sql = @"INSERT INTO tblClientes (nit, nombre , telf) values (@nit, @nom, @telf  )  SELECT SCOPE_IDENTITY()";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@nit", cliente.nit);
                     cmd.Parameters.AddWithValue("@nom", cliente.nombre);
                     cmd.Parameters.AddWithValue("@telf", cliente.telefono);
-                    cmd.Parameters.AddWithValue("@ref", cliente.referencia);
 
                     cliente.idCliente = Convert.ToInt32(cmd.ExecuteScalar());
                 }
@@ -125,8 +123,7 @@ namespace CapaDeDatos
                 string sql = @"UPDATE tblClientes SET  
                                             nombre = @nombre, 
                                             nit=@nit,
-                                            telf=@telf,
-                                            ref=@ref
+                                            telf=@telf
                                     WHERE idCliente = @idcli";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -134,7 +131,6 @@ namespace CapaDeDatos
                 cmd.Parameters.AddWithValue("@nit", cliente.nit);
                 cmd.Parameters.AddWithValue("@nombre", cliente.nombre);
                 cmd.Parameters.AddWithValue("@telf", cliente.telefono);
-                cmd.Parameters.AddWithValue("@ref", cliente.referencia);
                 cmd.Parameters.AddWithValue("@idcli", cliente.idCliente);
                 cmd.ExecuteNonQuery();
 

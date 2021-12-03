@@ -12,10 +12,17 @@ namespace Entidades
         public int status { get; set; }
         public DateTime fechaInicio { get; set; }
         public DateTime fechaEntrega { get; set; }
-        public float costo { get; set; }
+        public double costo { get; set; }
         public string direccionEntrega { get; set; }
         public int numPedido { get; set; }
+        public int idCliente { get; set; }
+        public int idTrabajador { get; set; }
         public List<DetallePedido> listaDeProductos { get; set; }
 
+
+        // atributos para ubicacion 
+        public double? lat { get; set; }
+        public double? lng { get; set; }
+        public string descripcionMap { get; set; }
     }
 }

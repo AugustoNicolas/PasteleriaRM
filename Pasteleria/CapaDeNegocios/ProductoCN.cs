@@ -59,5 +59,32 @@ namespace CapaDeNegocios
             }
 
         }// end GetPrecioByIdProducto
+
+        public void Delete(Producto producto)
+        {
+            if (daProducto.Exist(producto.idProducto))
+                daProducto.Delete(producto);
+        }// end delete
+
+        public Producto Create(Producto producto)
+        {
+            if (daProducto.Exist(producto.idProducto)) 
+            {
+                if (producto.foto == null)
+                    daProducto.Update(producto);
+                else
+                    daProducto.UpdateWithFoto(producto);
+            }
+            else
+            {
+                if (producto.foto == null)
+                    daProducto.Create(producto);
+                else
+                    daProducto.CreateWithFoto(producto);
+            }
+            return producto;
+            
+        }
+
     } //end class
 }// end namespace

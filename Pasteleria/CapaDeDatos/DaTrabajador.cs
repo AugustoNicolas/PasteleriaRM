@@ -18,6 +18,11 @@ namespace CapaDeDatos
             trabajador.ciTrabajador = Convert.ToInt32(reader["ciTrabajador"]);
             trabajador.nombre = Convert.ToString(reader["nombre"]);
             trabajador.telefono = Convert.ToString(reader["telf"]);
+            trabajador.nick = Convert.ToString(reader["nick"]);
+            trabajador.dateIn = Convert.ToDateTime(reader["dateIn"]);
+            trabajador.estado = Convert.ToInt32(reader["estado"]);
+            if (reader["dateMod"] != DBNull.Value)
+               trabajador.dateMod = Convert.ToDateTime(reader["dateMod"]);
 
             return trabajador;
         } //end trabajador 
@@ -30,7 +35,7 @@ namespace CapaDeDatos
                 try
                 {
                     conn.Open();
-                    string sql = @"SELECT * FROM tblTrabajador ORDER BY nombre";
+                    string sql = @"SELECT * FROM tblTrabajador WHERE estado = 1 ORDER BY nombre";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -92,6 +97,99 @@ namespace CapaDeDatos
                 }
             }
         } // end exist
+
+        public void Delete(Trabajador trabajador)
+        {
+            using (SqlConnection conn = new SqlConnection(ConexionSQL.ObtenerCadenaConexion()))
+            {
+                string sql = @"update tblTrabajador set estado = 2 WHERE idTrabajador = @idTra";
+                //SCOPE_IDENTITY() , devuelve el ultimo registro creado
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@idTra", trabajador.idTrabajador);
+
+                trabajador.idTrabajador = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+
+        } // end delete
+
+        public Trabajador Create(Trabajador trabajador)
+        {
+            using (SqlConnection conn = new SqlConnection(ConexionSQL.ObtenerCadenaConexion()))
+            {
+                conn.Open();
+                string sql = @"INSERT INTO tblTrabajador(ciTrabajador, nombre,telf, nick, estado, dateIn) 
+                               values (@ci , @nombre ,  @telf , @nick , 1 , @date);
+                               SELECT SCOPE_IDENTITY()";
+                //SCOPE_IDENTITY() , devuelve el ultimo registro creado
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@ci", trabajador.ciTrabajador);
+                cmd.Parameters.AddWithValue("@nombre", trabajador.nombre);
+                cmd.Parameters.AddWithValue("@telf", trabajador.telefono);
+                cmd.Parameters.AddWithValue("@nick", trabajador.nick);
+                cmd.Parameters.AddWithValue("@date", trabajador.dateIn);
+
+                trabajador.idTrabajador = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+
+            return trabajador;
+        }
+
+        public Trabajador Update(Trabajador trabajador)
+        {
+            using (SqlConnection conn = new SqlConnection(ConexionSQL.ObtenerCadenaConexion()))
+            {
+                conn.Open();
+                string sql = @"update tblTrabajador set ciTrabajador = @ci, nombre = @nombre, telf = @telf, nick = @nick
+                                WHERE idTrabajador = @idTra";
+                //SCOPE_IDENTITY() , devuelve el ultimo registro creado
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@ci", trabajador.ciTrabajador);
+                cmd.Parameters.AddWithValue("@nombre", trabajador.nombre);
+                cmd.Parameters.AddWithValue("@telf", trabajador.telefono);
+                cmd.Parameters.AddWithValue("@nick", trabajador.nick);
+                cmd.Parameters.AddWithValue("@idTra", trabajador.idTrabajador);
+
+                trabajador.idTrabajador = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            return trabajador;
+        }//Listas por nick de trabajadores
+
+        public List<Trabajador> GetNick()
+        {
+            try
+            {
+                List<Trabajador> listaDeTrabajadores = new List<Trabajador>();
+                using (SqlConnection conn = new SqlConnection(ConexionSQL.ObtenerCadenaConexion()))
+                {
+                    conn.Open();
+                    string sql = @"SELECT nick,idTrabajador  FROM tblTrabajador";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Trabajador trabajador = new Trabajador();
+                        trabajador.nick = Convert.ToString(reader["nick"]);
+                        trabajador.idTrabajador= Convert.ToInt32(reader["idTrabajador"]);
+                    }
+                    return listaDeTrabajadores;
+
+                }
+            }
+
+
+            catch
+            {
+                throw;
+            }
+
+        }
 
 
     } //end class

@@ -10,7 +10,7 @@ namespace Entidades
     {
         public int idIngrediente { get; set; }
         public string nombre { get; set; }
-        public float precio { get; set; }
+        public double precio { get; set; }
         public int stock { get; set; }
     }
 }
