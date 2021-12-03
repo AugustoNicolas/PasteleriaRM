@@ -18,15 +18,9 @@ Create table tblTrabajador (
    estado int not null,
    primary key (idTrabajador),
    dateIn date not null,
-   dateMod date,
+   dateMod date
 );
 
-alter table tblTrabajador add dateMod date
-
-update tblTrabajador set dateIn='11/30/2021'
-select * from tblTrabajador
-
-alter table tblTrabajador alter column dateIn date not null
 
 Create table tblPedido(
    idPedido  int IDENTITY(1,1) NOT NULL ,
@@ -61,7 +55,6 @@ Create table tblProducto (
 
    primary key (idProducto)
 );
-select * from tblProducto
 
 Create table tblIngredientes(
    idIngrediente  int IDENTITY(1,1) NOT NULL ,
@@ -109,8 +102,14 @@ INSERT INTO tblClientes (nombre, nit, telf) values ('Juan', 654321, '258964');
 INSERT INTO tblTrabajador(ciTrabajador, nombre,telf) values (9999999, 'Pedro',  '70977597');
 
 
+alter table tblTrabajador add nick varchar(20)
 
-SELECT * FROM tblProducto
+update tblTrabajador set nick='Juan'
+select * from tblTrabajador
+
+alter table tblTrabajador alter column nick varchar(20) not null
+
+SELECT * FROM tblTrabajador
 
 Select P.idProducto, p.precio, p.stock, p.categoria, p.tama�o, p.saborMasa, p.saborRelleno, p.relleno, p.nombre
 FROM tblProducto p, tblDetallePedido DP
@@ -128,3 +127,6 @@ SELECT * FROM tblDetallePedido
 
 SELECT Count(*)  FROM tblPedido    
 SELECT * FROM tblTrabajador
+
+INSERT into tblPedido (numPedido, fechaInicio, fechaEntrega, costo,  estado, idCliente, idTrabajador)              
+values ( 18 , '12/03/2021' , '12/03/2021' , 20 , 1 , @idcliente , @idTrabajador ) SELECT SCOPE_IDENTITY()

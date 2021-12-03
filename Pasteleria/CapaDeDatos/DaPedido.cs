@@ -28,10 +28,12 @@ namespace CapaDeDatos
             ped.status = Convert.ToInt32(reader["estado"]);
             ped.idTrabajador = Convert.ToInt32(reader["idTrabajador"]);
             ped.idCliente = Convert.ToInt32(reader["idCliente"]);
-
-            ped.descripcionMap = Convert.ToString(reader["descripcionMap"]);
-            ped.lat = Convert.ToDouble(reader["lat"]);
-            ped.lng = Convert.ToDouble(reader["lng"]);
+            if (reader["descripcionMap"] != DBNull.Value)
+               ped.descripcionMap = Convert.ToString(reader["descripcionMap"]);
+            if (reader["lat"] != DBNull.Value)
+                ped.lat = Convert.ToDouble(reader["lat"]);
+            if (reader["lng"] != DBNull.Value)
+                ped.lng = Convert.ToDouble(reader["lng"]);
 
             return ped;
         } //end loadpedido
@@ -81,19 +83,38 @@ namespace CapaDeDatos
             }
         } // end exist
 
-        public Pedido UpdateIdTrabajador(Pedido pedido)
+        public Pedido AsignarPedido(Pedido pedido)
         {
             using (SqlConnection conn = new SqlConnection(ConexionSQL.ObtenerCadenaConexion()))
             {
                 conn.Open();
 
                 string sql = @"UPDATE tblPedido SET  
-                                            idTrabajador = @idtra
+                                            idTrabajador = @idtra,
+                                            estado = 2
                                     WHERE idPedido = @idPed";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@idtra", pedido.idTrabajador);
+                cmd.Parameters.AddWithValue("@idPed", pedido.idPedido);
+                cmd.ExecuteNonQuery();
+
+            }
+            return pedido;
+        }
+        public Pedido CerrarPedido(Pedido pedido)
+        {
+            using (SqlConnection conn = new SqlConnection(ConexionSQL.ObtenerCadenaConexion()))
+            {
+                conn.Open();
+
+                string sql = @"UPDATE tblPedido SET  
+                                            estado = 3
+                                    WHERE idPedido = @idPed";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
                 cmd.Parameters.AddWithValue("@idPed", pedido.idPedido);
                 cmd.ExecuteNonQuery();
 
@@ -132,7 +153,6 @@ namespace CapaDeDatos
                 }
             }
         } // end get by id
-//Revisaaaaar ***************************************************************************
         public void CreateWithMap(Pedido ped)
         {
             using(SqlConnection conn = new SqlConnection(ConexionSQL.ObtenerCadenaConexion()))
@@ -179,7 +199,7 @@ namespace CapaDeDatos
             }
         }// end create with map
 
-        public void Create(Pedido ped, Cliente cliente, Trabajador trabajador)
+        public void Create(Pedido ped)
         {
             using (SqlConnection conn = new SqlConnection(ConexionSQL.ObtenerCadenaConexion()))
             {
@@ -195,8 +215,8 @@ namespace CapaDeDatos
                     cmd.Parameters.AddWithValue("@fechaFin", ped.fechaEntrega);
                     cmd.Parameters.AddWithValue("@costo", ped.costo);
                     cmd.Parameters.AddWithValue("@estado", ped.status);
-                    cmd.Parameters.AddWithValue("@idcliente", cliente.idCliente);
-                    cmd.Parameters.AddWithValue("@idTrabajador", trabajador.idTrabajador);
+                    cmd.Parameters.AddWithValue("@idcliente", ped.idCliente);
+                    cmd.Parameters.AddWithValue("@idTrabajador", ped.idTrabajador);
 
 
                     ped.idPedido = Convert.ToInt32(cmd.ExecuteScalar());// nos retorna el Id de la factura creada

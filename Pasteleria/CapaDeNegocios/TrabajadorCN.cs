@@ -25,7 +25,22 @@ namespace CapaDeNegocios
             if (trabajador.idTrabajador != 0)
                 daTrabajador.Delete(trabajador);
         }
-        public 
+        public Trabajador Create(Trabajador trabajador)
+        {
+            trabajador.dateIn = DateTime.Now;
+            if (trabajador.idTrabajador == 0)
+            {
+                trabajador = daTrabajador.Create(trabajador);
+            }
+            else
+            {
+                if (daTrabajador.Exist(trabajador.idTrabajador))
+                    trabajador = daTrabajador.Update(trabajador);
+                else
+                    trabajador = daTrabajador.Create(trabajador);
+            }
+            return trabajador;
+        }
         
     }
 }

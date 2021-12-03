@@ -93,7 +93,7 @@ namespace Pasteleria
             foreach(Pedido pedido in listaDePedidos)
             {
                 pedido.idTrabajador = trabajador.idTrabajador;
-                cnPedido.UpdateIdTrabajador(pedido);
+                cnPedido.AsignarPedido(pedido);
             }
             this.Close();
         }

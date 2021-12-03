@@ -108,3 +108,6 @@ D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pasteleria.frmNew
 D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pasteleria.frmProduccion.resources
 D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pasteleria.frmTrabajador.resources
 D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pasteleria.frmNewTrabajador.resources
+D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pasteleria.winAsignarPed.resources
+D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\Pasteleria\obj\Debug\Pasteleria.winGestorPedido.resources
+D:\UDi\Pasteleria\PasteleriaRM\Pasteleria\Pasteleria\bin\Debug\FontAwesome.Sharp.dll

@@ -43,9 +43,14 @@ namespace CapaDeNegocios
             return daPedido.CountNumPed();
         }
 
-        public Pedido UpdateIdTrabajador(Pedido pedido)
+        public Pedido AsignarPedido(Pedido pedido)
         {
-            return daPedido.UpdateIdTrabajador(pedido);
+            return daPedido.AsignarPedido(pedido);
+        }
+
+        public Pedido CerrarPedido(Pedido pedido)
+        {
+            return daPedido.CerrarPedido(pedido);
         }
 
         public List<Pedido> GetAll()

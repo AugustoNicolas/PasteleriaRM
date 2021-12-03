@@ -20,9 +20,9 @@ namespace CapaDeDatos
             trabajador.telefono = Convert.ToString(reader["telf"]);
             trabajador.nick = Convert.ToString(reader["nick"]);
             trabajador.dateIn = Convert.ToDateTime(reader["dateIn"]);
+            trabajador.estado = Convert.ToInt32(reader["estado"]);
             if (reader["dateMod"] != DBNull.Value)
                trabajador.dateMod = Convert.ToDateTime(reader["dateMod"]);
-
 
             return trabajador;
         } //end trabajador 
@@ -118,8 +118,9 @@ namespace CapaDeDatos
         {
             using (SqlConnection conn = new SqlConnection(ConexionSQL.ObtenerCadenaConexion()))
             {
-                string sql = @"INSERT INTO tblTrabajador(ciTrabajador, nombre,telf) 
-                               values (@ci , @nombre ,  @telf);
+                conn.Open();
+                string sql = @"INSERT INTO tblTrabajador(ciTrabajador, nombre,telf, nick, estado, dateIn) 
+                               values (@ci , @nombre ,  @telf , @nick , 1 , @date);
                                SELECT SCOPE_IDENTITY()";
                 //SCOPE_IDENTITY() , devuelve el ultimo registro creado
 
@@ -128,17 +129,22 @@ namespace CapaDeDatos
                 cmd.Parameters.AddWithValue("@ci", trabajador.ciTrabajador);
                 cmd.Parameters.AddWithValue("@nombre", trabajador.nombre);
                 cmd.Parameters.AddWithValue("@telf", trabajador.telefono);
+                cmd.Parameters.AddWithValue("@nick", trabajador.nick);
+                cmd.Parameters.AddWithValue("@date", trabajador.dateIn);
 
                 trabajador.idTrabajador = Convert.ToInt32(cmd.ExecuteScalar());
             }
 
             return trabajador;
         }
+
         public Trabajador Update(Trabajador trabajador)
         {
             using (SqlConnection conn = new SqlConnection(ConexionSQL.ObtenerCadenaConexion()))
             {
-                string sql = @"update tblTrabajador set ciTrabajador = @ci, nombre = @nombre, telf = @telf WHERE idTrabajador = @idTra";
+                conn.Open();
+                string sql = @"update tblTrabajador set ciTrabajador = @ci, nombre = @nombre, telf = @telf, nick = @nick
+                                WHERE idTrabajador = @idTra";
                 //SCOPE_IDENTITY() , devuelve el ultimo registro creado
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -146,12 +152,14 @@ namespace CapaDeDatos
                 cmd.Parameters.AddWithValue("@ci", trabajador.ciTrabajador);
                 cmd.Parameters.AddWithValue("@nombre", trabajador.nombre);
                 cmd.Parameters.AddWithValue("@telf", trabajador.telefono);
+                cmd.Parameters.AddWithValue("@nick", trabajador.nick);
                 cmd.Parameters.AddWithValue("@idTra", trabajador.idTrabajador);
 
                 trabajador.idTrabajador = Convert.ToInt32(cmd.ExecuteScalar());
             }
             return trabajador;
-        //Listas por nick de trabajadores
+        }//Listas por nick de trabajadores
+
         public List<Trabajador> GetNick()
         {
             try

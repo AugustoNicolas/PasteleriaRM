@@ -15,7 +15,6 @@ namespace Pasteleria
     public partial class winGestorPedido : Form
     {
         private PedidoCN pedidocn = new PedidoCN();
-        private Trabajador trabajador = null;
         private List<Pedido> listaDePedidos = new List<Pedido>();
 
         public winGestorPedido()
@@ -43,7 +42,7 @@ namespace Pasteleria
 
         private void winGestorPedido_Load(object sender, EventArgs e)
         {
-            DGPed.DataSource = pedidocn.GetAll();
+            DGPed.DataSource = Filtrador(1);
             
         }
 
@@ -53,8 +52,8 @@ namespace Pasteleria
             winAsignarPed frm = new winAsignarPed();
             frm.listaDePedidos = this.listaDePedidos;
             frm.ShowDialog();
-                DGPed.DataSource = pedidocn.GetAll();
-                this.listaDePedidos = new List<Pedido>();
+            DGPed.DataSource = Filtrador(1);
+            this.listaDePedidos = new List<Pedido>();
             
         }
 
@@ -117,6 +116,15 @@ namespace Pasteleria
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            DGPed.DataSource = Filtrador(3);
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            foreach(Pedido pedido in listaDePedidos)
+            {
+                pedidocn.CerrarPedido(pedido);
+            }
             DGPed.DataSource = Filtrador(3);
         }
     }

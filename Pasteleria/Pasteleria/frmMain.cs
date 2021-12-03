@@ -34,7 +34,7 @@ namespace Pasteleria
 
         private void btnMax_Click(object sender, EventArgs e)
         {
-            
+
             this.WindowState = FormWindowState.Maximized;
             btnMax.Visible = false;
             btnMinimizar.Visible = true;
@@ -88,7 +88,7 @@ namespace Pasteleria
             this.panContenido.Controls.Add(fh);
             this.panContenido.Tag = fh;
             fh.Show();
-            
+
         }
 
         private void btnPedidoUser_Click(object sender, EventArgs e)
@@ -96,17 +96,9 @@ namespace Pasteleria
             AbrirFromHija(new frmCompra());
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            AbrirFromHija(new frmCatalogo());
-        }
-
         private void btnIngredientes_Click(object sender, EventArgs e)
         {
             AbrirFromHija(new frmProduccion());
-        private void btnPedidoUser_Click(object sender, EventArgs e)
-        {
-            AbrirGestor(new winGestorPedido());
         }
         //Abrir ventanas de Gestor
         public void AbrirGestor(object GestPed)
@@ -119,17 +111,37 @@ namespace Pasteleria
             this.panContenido.Controls.Add(Ped);
             this.panContenido.Tag = Ped;
             Ped.Show();
-                
+
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
             pantallaOk();
+        }    
+
+        private void btnCatalogo_Click(object sender, EventArgs e)
+        {
+            AbrirFromHija(new frmCatalogo());
         }
 
-        private void btnAtencion_Click(object sender, EventArgs e)
+        private void btnAtencion_Click_1(object sender, EventArgs e)
         {
             AbrirGestor(new winGestorPedido());
+        }
+
+        private void btnContabilidad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRpt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIngredientes_Click_1(object sender, EventArgs e)
+        {
+            AbrirFromHija(new frmTrabajador());
         }
     }
 }

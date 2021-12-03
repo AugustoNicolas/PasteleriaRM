@@ -34,13 +34,11 @@ namespace Pasteleria
 
         private void dgTrabajadores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            trabajador.idTrabajador = Convert.ToInt32(dgTrabajadores.Rows[e.RowIndex].Cells["idTrabajador"].Value);
-            trabajador.nombre = Convert.ToString(dgTrabajadores.Rows[e.RowIndex].Cells["nombre"].Value);
-
-
             txtCi.Text = Convert.ToString(dgTrabajadores.Rows[e.RowIndex].Cells["ciTrabajador"].Value);
-            txtTelf.Text = Convert.ToString(dgTrabajadores.Rows[e.RowIndex].Cells["telf"].Value);
+            txtTelf.Text = Convert.ToString(dgTrabajadores.Rows[e.RowIndex].Cells["telefono"].Value);
             txtNombre.Text = Convert.ToString(dgTrabajadores.Rows[e.RowIndex].Cells["nombre"].Value);
+            txtNick.Text = Convert.ToString(dgTrabajadores.Rows[e.RowIndex].Cells["nick"].Value);
+            txtId.Text = Convert.ToString(dgTrabajadores.Rows[e.RowIndex].Cells["idTrabajador"].Value);
 
             dgTrabajadores.Rows[e.RowIndex].Cells["check"].Value = true;
 
@@ -55,7 +53,10 @@ namespace Pasteleria
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            
+            if (Validaciones())
+            {
+                CargarCliente();
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -77,25 +78,72 @@ namespace Pasteleria
 
         }
 
+        //private bool Validaciones()
+        //{
+        //    bool result = true;
+        //    if (trabajador.nombre == null || trabajador.idTrabajador == 0)
+        //    {
+        //        errorProvider1.SetError(dgTrabajadores, "Seleccione un trabajador");
+        //        result = false;
+        //    }
+            
+        //        return result;
+        //}
         private bool Validaciones()
         {
+
             bool result = true;
-            if (trabajador.nombre == null || trabajador.idTrabajador == 0)
+            if (string.IsNullOrEmpty(txtNombre.Text))
             {
-                errorProvider1.SetError(dgTrabajadores, "Seleccione un trabajador");
+                errorProvider1.SetError(txtNombre, "El campo no puede estar vacio");
                 result = false;
             }
-            //if (string.IsNullOrEmpty(txtTelf.Text))
-            //{
-            //    errorProvider1.SetError(txtTelf, "El campo no puede estar vacio");
-            //    result = false;
-            //}
-                return result;
+            if (string.IsNullOrEmpty(txtCi.Text))
+            {
+                errorProvider1.SetError(txtCi, "El campo no puede estar vacio");
+                result = false;
+            }
+            if (string.IsNullOrEmpty(txtNick.Text))
+            {
+                errorProvider1.SetError(txtNick, "El campo no puede estar vacio");
+                result = false;
+            }
+            if (string.IsNullOrEmpty(txtTelf.Text))
+            {
+                errorProvider1.SetError(txtTelf, "El campo no puede estar vacio");
+                result = false;
+            }
+            return result;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (Validaciones())
+            {
+                txtId.Text = "0";
+                CargarCliente();
+            }
+        }
 
+        private void txtTelf_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void CargarCliente()
+        {
+            trabajador.nombre = txtNombre.Text;
+            trabajador.idTrabajador = Convert.ToInt32(txtId.Text);
+            trabajador.nick = txtNick.Text;
+            trabajador.telefono = txtTelf.Text;
+            trabajador.ciTrabajador = Convert.ToInt32(txtCi.Text);
+
+            cnTrabajador.Create(trabajador);
+            dgTrabajadores.DataSource = cnTrabajador.GetAll();
         }
     } //end class
 }// end namespace

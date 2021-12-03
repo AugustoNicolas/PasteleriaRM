@@ -193,6 +193,7 @@ namespace Pasteleria
                 cliente = new Cliente();
 
             cliente.idCliente = Convert.ToInt32(txtId.Text);
+            ped.idCliente = Convert.ToInt32(txtId.Text);
             cliente.nombre = txtNombre.Text;
             cliente.nit = Convert.ToInt32(txtNit.Text);
             cliente.telefono = txtTelf.Text;
@@ -213,9 +214,8 @@ namespace Pasteleria
                 ped.listaDeProductos.Add(producto);
             }
             ped.direccionEntrega = txtRef.Text;
-
-            trabajador = trabajadorCN.GetById(1);
-            pedidoCN.Create(pedido);
+            ped.idTrabajador = 1;
+            pedidoCN.Create(ped);
 
 
             InicializarControles();
