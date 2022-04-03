@@ -61,6 +61,29 @@ namespace CapaDeDatos
             return list;
         }//end get all
 
+        public List<Pedido> GetAllByClient(int id)
+        {
+            List<Pedido> list = new List<Pedido>();
+
+            using (SqlConnection conn = new SqlConnection(ConexionSQL.ObtenerCadenaConexion()))
+            {
+                conn.Open();
+
+                string sql = @"SELECT * FROM tblPedido WHERE idCliente = @idcliente AND lat is not null ";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@idcliente", id);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    list.Add(LoadPedido(reader));
+                }
+
+            }
+
+            return list;
+        }//end get all
+
         public int CountNumPed()
         {
             int nrorecrd = 0;

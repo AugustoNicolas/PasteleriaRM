@@ -58,6 +58,11 @@ namespace CapaDeNegocios
             return daPedido.GetAll();
         }
 
+        public List<Pedido> GetAllByCliente(int id)
+        {
+            return daPedido.GetAllByClient(id);
+        }
+
         public DataTable GetAllDataTable()
         {
             List<Pedido> list = GetAll();

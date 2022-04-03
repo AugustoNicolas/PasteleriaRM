@@ -115,7 +115,7 @@ namespace Pasteleria
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurar.ErrorImage = null;
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(691, 3);
+            this.btnRestaurar.Location = new System.Drawing.Point(692, 2);
             this.btnRestaurar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(41, 37);
@@ -235,6 +235,7 @@ namespace Pasteleria
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(4, 31);
             this.panel5.TabIndex = 12;
+            this.panel5.Visible = false;
             // 
             // btnRpt
             // 
@@ -258,6 +259,7 @@ namespace Pasteleria
             this.btnRpt.Text = "Reportería";
             this.btnRpt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRpt.UseVisualStyleBackColor = false;
+            this.btnRpt.Visible = false;
             this.btnRpt.Click += new System.EventHandler(this.btnRpt_Click);
             // 
             // panel4
@@ -268,6 +270,7 @@ namespace Pasteleria
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(4, 31);
             this.panel4.TabIndex = 10;
+            this.panel4.Visible = false;
             // 
             // btnContabilidad
             // 
@@ -291,6 +294,7 @@ namespace Pasteleria
             this.btnContabilidad.Text = "Contabilidad";
             this.btnContabilidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnContabilidad.UseVisualStyleBackColor = false;
+            this.btnContabilidad.Visible = false;
             this.btnContabilidad.Click += new System.EventHandler(this.btnContabilidad_Click);
             // 
             // panel3
