@@ -362,10 +362,14 @@ namespace Pasteleria
 
         private void btnMap_Click(object sender, EventArgs e)
         {
-            cliente.idCliente = Convert.ToInt32(txtId.Text);
-            cliente.nombre = txtNombre.Text;
-            cliente.nit = Convert.ToInt32(txtNit.Text);
-            cliente.telefono = txtTelf.Text;
+            if (!string.IsNullOrEmpty(txtId.Text))
+                cliente.idCliente = Convert.ToInt32(txtId.Text);
+            if (!string.IsNullOrEmpty(txtNombre.Text))
+                cliente.nombre = txtNombre.Text;
+            if (!string.IsNullOrEmpty(txtNit.Text))
+                cliente.nit = Convert.ToInt32(txtNit.Text);
+            if (!string.IsNullOrEmpty(txtTelf.Text))
+                cliente.telefono = txtTelf.Text;
 
             mapPage.cliente = this.cliente;
             mapPage.ShowDialog();

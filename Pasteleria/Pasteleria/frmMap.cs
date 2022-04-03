@@ -127,8 +127,8 @@ namespace Pasteleria
             dt.Columns.Add(new DataColumn("Descripcion", typeof(string)));
             dt.Columns.Add(new DataColumn("Lat", typeof(double)));
             dt.Columns.Add(new DataColumn("Lng", typeof(double)));
-
-            dt.Rows.Add(txtDescripcion.Text, Convert.ToDouble(txtLat.Text), Convert.ToDouble(txtLng.Text));
+            if (!string.IsNullOrEmpty(txtLat.Text))
+                dt.Rows.Add(txtDescripcion.Text, Convert.ToDouble(txtLat.Text), Convert.ToDouble(txtLng.Text));
 
             return dt;
         }
